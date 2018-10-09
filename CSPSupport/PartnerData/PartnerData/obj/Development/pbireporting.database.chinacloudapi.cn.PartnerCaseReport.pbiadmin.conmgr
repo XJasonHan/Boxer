@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="pbireporting.database.chinacloudapi.cn.PartnerCaseReport.pbiadmin"
+  DTS:DTSID="{5C43307F-8563-4972-8C22-2FB89AE2E1C8}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="Data Source=pbireporting.database.chinacloudapi.cn;User ID=pbiadmin;Initial Catalog=PartnerCaseReport;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
+      <DTS:Password
+        DTS:Name="Password"
+        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAqmDlAl3XekGFTfOp3eTpOQAAAAACAAAAAAADZgAAwAAAABAAAABzWVvE1k6e7pa07G8uMewcAAAAAASAAACgAAAAEAAAADZA0Lgge9StpQFBnhm4EJZ4AAAAAtdg51NiLEUV2utt0FsSkHLSBRgYHA2J/8bLw9nY5WNWsNGoAEg6KBDopnWMj7p4XUEFoxlSAerSuMlcgw6dljp/TI4k9TIC+opIPoj3PF0ROMr6b4S7dopU41GyaSk9COjSODs4p2mRyga1dXJmVvVxCXWGjhX1FAAAACu8Yz0p5yf4iR3sv01utk72li36</DTS:Password>
+    </DTS:ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>
