@@ -8,7 +8,7 @@
       DTS:ConnectionString="Data Source=pbireporting.database.chinacloudapi.cn;User ID=pbiadmin;Initial Catalog=PartnerCaseReport;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
       <DTS:Password
         DTS:Name="Password"
-        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAqmDlAl3XekGFTfOp3eTpOQAAAAACAAAAAAADZgAAwAAAABAAAABzWVvE1k6e7pa07G8uMewcAAAAAASAAACgAAAAEAAAADZA0Lgge9StpQFBnhm4EJZ4AAAAAtdg51NiLEUV2utt0FsSkHLSBRgYHA2J/8bLw9nY5WNWsNGoAEg6KBDopnWMj7p4XUEFoxlSAerSuMlcgw6dljp/TI4k9TIC+opIPoj3PF0ROMr6b4S7dopU41GyaSk9COjSODs4p2mRyga1dXJmVvVxCXWGjhX1FAAAACu8Yz0p5yf4iR3sv01utk72li36</DTS:Password>
+        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAqmDlAl3XekGFTfOp3eTpOQAAAAACAAAAAAADZgAAwAAAABAAAAD7o3p11hDuRPtJvWTjZ9rRAAAAAASAAACgAAAAEAAAAGGlAv/RuOEf2RX9rTu2gqp4AAAA4Hk1rACg/D2a2qdacw8wdjCGPXMhYYSODpKvnx9KRnBJaOnw4LHtFXQKaOi6UuvTzNJ2iylCYnDLrT4tT49u0tIHabx22PdTwEM1nLLWSYSI6Ck8xyoySDJsq2N5dPFlXovHkyobv/GG7eOEEzYd4El6LUVPWjoRFAAAAPWqLPPr40fNt2/jHMWiA6y8Jdbu</DTS:Password>
     </DTS:ConnectionManager>
   </DTS:ObjectData>
 </DTS:ConnectionManager>
