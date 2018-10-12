@@ -2,7 +2,7 @@
 <BuildLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ProjectInfo>
     <Name>PartnerData</Name>
-    <LastWriteTime>2018-10-12T03:19:27.5510133Z</LastWriteTime>
+    <LastWriteTime>2018-10-12T08:55:47.5081289Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
@@ -18,7 +18,12 @@
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>HistoryData.dtsx</Name>
-      <LastWriteTime>2018-10-12T07:31:04.3030812Z</LastWriteTime>
+      <LastWriteTime>2018-10-12T08:55:47.4511335Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>Testpkg.dtsx</Name>
+      <LastWriteTime>2018-10-12T08:55:47.3551541Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>

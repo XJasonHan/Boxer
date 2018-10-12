@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="HistoryData"
   DTS:PackageType="5"
-  DTS:VersionBuild="22"
-  DTS:VersionGUID="{50C68FBF-9945-401B-B5D5-DC00C0141D85}">
+  DTS:VersionBuild="24"
+  DTS:VersionGUID="{83E5AD92-690E-4350-AE94-EEE5933CD753}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -5038,8 +5038,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{5C43307F-8563-4972-8C22-2FB89AE2E1C8}"
-          SQLTask:SqlStatementSource="truncate table [StagingCustomerCase]"
-          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:SqlStatementSource="truncate table StagingCustomerCase" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
   </DTS:Executables>
@@ -5081,6 +5080,10 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
           Size="152,42"
           Id="Package\staging to prod"
           TopLeft="276,212" />
+        <NodeLayout
+          Size="214,42"
+          Id="Package\Truncate staging case table"
+          TopLeft="270,299" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
           TopLeft="351.75,163">
@@ -5103,24 +5106,32 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="179,42"
-          Id="Package\Truncate staging case table"
-          TopLeft="270,299" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="355.75,254">
+          TopLeft="352,254">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,45"
+              EndConnector="25,45"
               Start="0,0"
-              End="0,37.5">
+              End="25,37.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,37.5" />
+                    End="0,18.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,18.5"
+                    Point2="0,22.5"
+                    Point3="4,22.5" />
+                  <mssgle:LineSegment
+                    End="21,22.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="21,22.5"
+                    Point2="25,22.5"
+                    Point3="25,26.5" />
+                  <mssgle:LineSegment
+                    End="25,37.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
