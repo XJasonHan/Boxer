@@ -1,18 +1,18 @@
-<?xml version="1.0"?>
+﻿<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
   DTS:CreationDate="10/10/2018 4:40:21 PM"
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="HANXU5-L-1"
   DTS:CreatorName="BJ-OE\han.xu5"
-  DTS:DTSID="{C26C03C2-7F75-4DAB-AF08-501C46510D93}"
+  DTS:DTSID="{C1FB42BD-66B3-4DF8-9900-B44126F6722A}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="15.0.0900.30"
   DTS:LocaleID="1033"
-  DTS:ObjectName="HistoryData"
+  DTS:ObjectName="AzulCaseToDB"
   DTS:PackageType="5"
-  DTS:VersionBuild="25"
-  DTS:VersionGUID="{AE5F27A9-0D27-4319-9BFA-EF5CDA9519B6}">
+  DTS:VersionBuild="27"
+  DTS:VersionGUID="{445E6C35-23DE-4102-ADC0-59D6C465ECBE}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -293,231 +293,9 @@
                 <input
                   refId="Package\source to staging\OLE DB Destination.Inputs[OLE DB Destination Input]"
                   errorOrTruncationOperation="Insert"
-                  errorRowDisposition="RedirectRow"
+                  errorRowDisposition="FailComponent"
                   hasSideEffects="true"
                   name="OLE DB Destination Input">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\source to staging\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[SR]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="SR"
-                      externalMetadataColumnId="Package\source to staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SR]"
-                      lineageId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[SR]" />
-                    <inputColumn
-                      refId="Package\source to staging\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Title]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="Title"
-                      externalMetadataColumnId="Package\source to staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Title]"
-                      lineageId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[Title]" />
-                    <inputColumn
-                      refId="Package\source to staging\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[lookupsource]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="lookupsource"
-                      externalMetadataColumnId="Package\source to staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LookUpSource]"
-                      lineageId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[lookupsource]" />
-                    <inputColumn
-                      refId="Package\source to staging\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Product]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="Product"
-                      externalMetadataColumnId="Package\source to staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Product]"
-                      lineageId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[Product]" />
-                    <inputColumn
-                      refId="Package\source to staging\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Seat]"
-                      cachedDataType="r8"
-                      cachedName="Seat"
-                      externalMetadataColumnId="Package\source to staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Seat]"
-                      lineageId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[Seat]" />
-                    <inputColumn
-                      refId="Package\source to staging\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Severity]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="Severity"
-                      externalMetadataColumnId="Package\source to staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Severity]"
-                      lineageId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[Severity]" />
-                    <inputColumn
-                      refId="Package\source to staging\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[closedclassification]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="closedclassification"
-                      externalMetadataColumnId="Package\source to staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[closedclassification]"
-                      lineageId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[closedclassification]" />
-                    <inputColumn
-                      refId="Package\source to staging\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[IssueCode]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="IssueCode"
-                      externalMetadataColumnId="Package\source to staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[IssueCode]"
-                      lineageId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[IssueCode]" />
-                    <inputColumn
-                      refId="Package\source to staging\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ReportMonth]"
-                      cachedDataType="r8"
-                      cachedName="ReportMonth"
-                      externalMetadataColumnId="Package\source to staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ReportMonth]"
-                      lineageId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[ReportMonth]" />
-                    <inputColumn
-                      refId="Package\source to staging\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[负责人]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="负责人"
-                      externalMetadataColumnId="Package\source to staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Engineer]"
-                      lineageId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[负责人]" />
-                    <inputColumn
-                      refId="Package\source to staging\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[工单归属公司]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="工单归属公司"
-                      externalMetadataColumnId="Package\source to staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Company]"
-                      lineageId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[工单归属公司]" />
-                    <inputColumn
-                      refId="Package\source to staging\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Inquire Type]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="Inquire Type"
-                      externalMetadataColumnId="Package\source to staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[InquireType]"
-                      lineageId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[Inquire Type]" />
-                    <inputColumn
-                      refId="Package\source to staging\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[lssue Description]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="lssue Description"
-                      externalMetadataColumnId="Package\source to staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Description]"
-                      lineageId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[lssue Description]" />
-                    <inputColumn
-                      refId="Package\source to staging\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[首选联系方式]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="首选联系方式"
-                      externalMetadataColumnId="Package\source to staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[EngageMethod]"
-                      lineageId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[首选联系方式]" />
-                    <inputColumn
-                      refId="Package\source to staging\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[SLA 状态]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="SLA 状态"
-                      externalMetadataColumnId="Package\source to staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SLA]"
-                      lineageId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[SLA 状态]" />
-                    <inputColumn
-                      refId="Package\source to staging\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[SLA 响应时间]"
-                      cachedDataType="date"
-                      cachedName="SLA 响应时间"
-                      externalMetadataColumnId="Package\source to staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SLATime]"
-                      lineageId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[SLA 响应时间]" />
-                    <inputColumn
-                      refId="Package\source to staging\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Case状态]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="Case状态"
-                      externalMetadataColumnId="Package\source to staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Status]"
-                      lineageId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[Case状态]" />
-                    <inputColumn
-                      refId="Package\source to staging\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[关闭原因]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="关闭原因"
-                      externalMetadataColumnId="Package\source to staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CloseReason]"
-                      lineageId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[关闭原因]" />
-                    <inputColumn
-                      refId="Package\source to staging\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[创建者]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="创建者"
-                      externalMetadataColumnId="Package\source to staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Creator]"
-                      lineageId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[创建者]" />
-                    <inputColumn
-                      refId="Package\source to staging\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Tenant ID]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="Tenant ID"
-                      externalMetadataColumnId="Package\source to staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TenantID]"
-                      lineageId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[Tenant ID]" />
-                    <inputColumn
-                      refId="Package\source to staging\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Customer Type]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="Customer Type"
-                      externalMetadataColumnId="Package\source to staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CustomerType]"
-                      lineageId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[Customer Type]" />
-                    <inputColumn
-                      refId="Package\source to staging\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[PoD Category]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="PoD Category"
-                      externalMetadataColumnId="Package\source to staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PoDCategory]"
-                      lineageId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[PoD Category]" />
-                    <inputColumn
-                      refId="Package\source to staging\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[PoD Problem Type]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="PoD Problem Type"
-                      externalMetadataColumnId="Package\source to staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PoDProblemType]"
-                      lineageId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[PoD Problem Type]" />
-                    <inputColumn
-                      refId="Package\source to staging\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[PoD Product]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="PoD Product"
-                      externalMetadataColumnId="Package\source to staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PoDProduct]"
-                      lineageId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[PoD Product]" />
-                    <inputColumn
-                      refId="Package\source to staging\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Partner Type]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="Partner Type"
-                      externalMetadataColumnId="Package\source to staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PartnerName]"
-                      lineageId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[Partner Type]" />
-                    <inputColumn
-                      refId="Package\source to staging\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Case Type]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="Case Type"
-                      externalMetadataColumnId="Package\source to staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CaseType]"
-                      lineageId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[Case Type]" />
-                    <inputColumn
-                      refId="Package\source to staging\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Org ID]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="Org ID"
-                      externalMetadataColumnId="Package\source to staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[OrgID]"
-                      lineageId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[Org ID]" />
-                    <inputColumn
-                      refId="Package\source to staging\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[修改者]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="修改者"
-                      externalMetadataColumnId="Package\source to staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Modifier]"
-                      lineageId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[修改者]" />
-                    <inputColumn
-                      refId="Package\source to staging\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[创建时间]"
-                      cachedDataType="date"
-                      cachedName="创建时间"
-                      externalMetadataColumnId="Package\source to staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CreationTime]"
-                      lineageId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[创建时间]" />
-                    <inputColumn
-                      refId="Package\source to staging\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[修改时间]"
-                      cachedDataType="date"
-                      cachedName="修改时间"
-                      externalMetadataColumnId="Package\source to staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ModificationTime]"
-                      lineageId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[修改时间]" />
-                    <inputColumn
-                      refId="Package\source to staging\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Subscription ID]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="Subscription ID"
-                      externalMetadataColumnId="Package\source to staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SubscriptionID]"
-                      lineageId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[Subscription ID]" />
-                    <inputColumn
-                      refId="Package\source to staging\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[FullIDnonUnicode]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="12"
-                      cachedName="FullIDnonUnicode"
-                      externalMetadataColumnId="Package\source to staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ItemID]"
-                      lineageId="Package\source to staging\Output type conversion.Outputs[Data Conversion Output].Columns[FullIDnonUnicode]" />
-                  </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
@@ -798,73 +576,67 @@
                       cachedLength="255"
                       cachedName="SR"
                       externalMetadataColumnId="Package\source to staging\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[SR]"
-                      lineageId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[SR]" />
+                      lineageId="Package\source to staging\215:invalid" />
                     <inputColumn
                       refId="Package\source to staging\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[Title]"
                       cachedDataType="wstr"
                       cachedLength="255"
                       cachedName="Title"
                       externalMetadataColumnId="Package\source to staging\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[Title]"
-                      lineageId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[Title]" />
+                      lineageId="Package\source to staging\216:invalid" />
                     <inputColumn
                       refId="Package\source to staging\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[lookupsource]"
                       cachedDataType="wstr"
                       cachedLength="255"
                       cachedName="lookupsource"
                       externalMetadataColumnId="Package\source to staging\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[LookUpSource]"
-                      lineageId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[lookupsource]" />
+                      lineageId="Package\source to staging\217:invalid" />
                     <inputColumn
                       refId="Package\source to staging\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[Product]"
                       cachedDataType="wstr"
                       cachedLength="255"
                       cachedName="Product"
                       externalMetadataColumnId="Package\source to staging\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[Product]"
-                      lineageId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[Product]" />
-                    <inputColumn
-                      refId="Package\source to staging\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[Seat]"
-                      cachedDataType="r8"
-                      cachedName="Seat"
-                      externalMetadataColumnId="Package\source to staging\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[Seat]"
-                      lineageId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[Seat]" />
+                      lineageId="Package\source to staging\218:invalid" />
                     <inputColumn
                       refId="Package\source to staging\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[Severity]"
                       cachedDataType="wstr"
                       cachedLength="255"
                       cachedName="Severity"
                       externalMetadataColumnId="Package\source to staging\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[Severity]"
-                      lineageId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[Severity]" />
+                      lineageId="Package\source to staging\221:invalid" />
                     <inputColumn
                       refId="Package\source to staging\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[closedclassification]"
                       cachedDataType="wstr"
                       cachedLength="255"
                       cachedName="closedclassification"
                       externalMetadataColumnId="Package\source to staging\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[closedclassification]"
-                      lineageId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[closedclassification]" />
+                      lineageId="Package\source to staging\224:invalid" />
                     <inputColumn
                       refId="Package\source to staging\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[IssueCode]"
                       cachedDataType="wstr"
                       cachedLength="255"
                       cachedName="IssueCode"
                       externalMetadataColumnId="Package\source to staging\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[IssueCode]"
-                      lineageId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[IssueCode]" />
+                      lineageId="Package\source to staging\237:invalid" />
                     <inputColumn
                       refId="Package\source to staging\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[ReportMonth]"
                       cachedDataType="r8"
                       cachedName="ReportMonth"
                       externalMetadataColumnId="Package\source to staging\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[ReportMonth]"
-                      lineageId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[ReportMonth]" />
+                      lineageId="Package\source to staging\251:invalid" />
                     <inputColumn
                       refId="Package\source to staging\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[ErrorCode]"
                       cachedDataType="i4"
                       cachedName="ErrorCode"
                       externalMetadataColumnId="Package\source to staging\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[ErrorCode]"
-                      lineageId="Package\source to staging\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]" />
+                      lineageId="Package\source to staging\109:invalid" />
                     <inputColumn
                       refId="Package\source to staging\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[ErrorColumn]"
                       cachedDataType="i4"
                       cachedName="ErrorColumn"
                       externalMetadataColumnId="Package\source to staging\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[ErrorColumn]"
-                      lineageId="Package\source to staging\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]" />
+                      lineageId="Package\source to staging\110:invalid" />
                     <inputColumn
                       refId="Package\source to staging\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[ErrorDescription]"
                       cachedCodepage="1252"
@@ -879,104 +651,104 @@
                       cachedLength="255"
                       cachedName="负责人"
                       externalMetadataColumnId="Package\source to staging\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[Engineer]"
-                      lineageId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[负责人]" />
+                      lineageId="Package\source to staging\226:invalid" />
                     <inputColumn
                       refId="Package\source to staging\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[工单归属公司]"
                       cachedDataType="wstr"
                       cachedLength="255"
                       cachedName="工单归属公司"
                       externalMetadataColumnId="Package\source to staging\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[Company]"
-                      lineageId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[工单归属公司]" />
+                      lineageId="Package\source to staging\228:invalid" />
                     <inputColumn
                       refId="Package\source to staging\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[Inquire Type]"
                       cachedDataType="wstr"
                       cachedLength="255"
                       cachedName="Inquire Type"
                       externalMetadataColumnId="Package\source to staging\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[InquireType]"
-                      lineageId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[Inquire Type]" />
+                      lineageId="Package\source to staging\225:invalid" />
                     <inputColumn
                       refId="Package\source to staging\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[lssue Description]"
                       cachedDataType="wstr"
                       cachedLength="255"
                       cachedName="lssue Description"
                       externalMetadataColumnId="Package\source to staging\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[Description]"
-                      lineageId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[lssue Description]" />
+                      lineageId="Package\source to staging\239:invalid" />
                     <inputColumn
                       refId="Package\source to staging\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[首选联系方式]"
                       cachedDataType="wstr"
                       cachedLength="255"
                       cachedName="首选联系方式"
                       externalMetadataColumnId="Package\source to staging\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[EngageMethod]"
-                      lineageId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[首选联系方式]" />
+                      lineageId="Package\source to staging\241:invalid" />
                     <inputColumn
                       refId="Package\source to staging\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[SLA 状态]"
                       cachedDataType="wstr"
                       cachedLength="255"
                       cachedName="SLA 状态"
                       externalMetadataColumnId="Package\source to staging\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[SLA]"
-                      lineageId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[SLA 状态]" />
+                      lineageId="Package\source to staging\240:invalid" />
                     <inputColumn
                       refId="Package\source to staging\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[SLA 响应时间]"
                       cachedDataType="date"
                       cachedName="SLA 响应时间"
                       externalMetadataColumnId="Package\source to staging\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[SLATime]"
-                      lineageId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[SLA 响应时间]" />
+                      lineageId="Package\source to staging\242:invalid" />
                     <inputColumn
                       refId="Package\source to staging\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[Case状态]"
                       cachedDataType="wstr"
                       cachedLength="255"
                       cachedName="Case状态"
                       externalMetadataColumnId="Package\source to staging\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[Status]"
-                      lineageId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[Case状态]" />
+                      lineageId="Package\source to staging\232:invalid" />
                     <inputColumn
                       refId="Package\source to staging\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[关闭原因]"
                       cachedDataType="wstr"
                       cachedLength="255"
                       cachedName="关闭原因"
                       externalMetadataColumnId="Package\source to staging\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[CloseReason]"
-                      lineageId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[关闭原因]" />
+                      lineageId="Package\source to staging\244:invalid" />
                     <inputColumn
                       refId="Package\source to staging\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[创建者]"
                       cachedDataType="wstr"
                       cachedLength="255"
                       cachedName="创建者"
                       externalMetadataColumnId="Package\source to staging\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[Creator]"
-                      lineageId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[创建者]" />
+                      lineageId="Package\source to staging\249:invalid" />
                     <inputColumn
                       refId="Package\source to staging\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[Tenant ID]"
                       cachedDataType="wstr"
                       cachedLength="255"
                       cachedName="Tenant ID"
                       externalMetadataColumnId="Package\source to staging\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[TenantID]"
-                      lineageId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[Tenant ID]" />
+                      lineageId="Package\source to staging\222:invalid" />
                     <inputColumn
                       refId="Package\source to staging\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[Customer Type]"
                       cachedDataType="wstr"
                       cachedLength="255"
                       cachedName="Customer Type"
                       externalMetadataColumnId="Package\source to staging\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[CustomerType]"
-                      lineageId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[Customer Type]" />
+                      lineageId="Package\source to staging\223:invalid" />
                     <inputColumn
                       refId="Package\source to staging\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[PoD Category]"
                       cachedDataType="wstr"
                       cachedLength="255"
                       cachedName="PoD Category"
                       externalMetadataColumnId="Package\source to staging\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[PoDCategory]"
-                      lineageId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[PoD Category]" />
+                      lineageId="Package\source to staging\236:invalid" />
                     <inputColumn
                       refId="Package\source to staging\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[PoD Problem Type]"
                       cachedDataType="wstr"
                       cachedLength="255"
                       cachedName="PoD Problem Type"
                       externalMetadataColumnId="Package\source to staging\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[PoDProblemType]"
-                      lineageId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[PoD Problem Type]" />
+                      lineageId="Package\source to staging\234:invalid" />
                     <inputColumn
                       refId="Package\source to staging\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[PoD Product]"
                       cachedDataType="wstr"
                       cachedLength="255"
                       cachedName="PoD Product"
                       externalMetadataColumnId="Package\source to staging\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[PoDProduct]"
-                      lineageId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[PoD Product]" />
+                      lineageId="Package\source to staging\235:invalid" />
                     <inputColumn
                       refId="Package\source to staging\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[FullIDnonUnicode]"
                       cachedCodepage="1252"
@@ -986,52 +758,31 @@
                       externalMetadataColumnId="Package\source to staging\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[ItemID]"
                       lineageId="Package\source to staging\Output type conversion.Outputs[Data Conversion Output].Columns[FullIDnonUnicode]" />
                     <inputColumn
-                      refId="Package\source to staging\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[Partner Type]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="Partner Type"
-                      externalMetadataColumnId="Package\source to staging\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[PartnerName]"
-                      lineageId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[Partner Type]" />
-                    <inputColumn
-                      refId="Package\source to staging\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[Case Type]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="Case Type"
-                      externalMetadataColumnId="Package\source to staging\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[CaseType]"
-                      lineageId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[Case Type]" />
-                    <inputColumn
-                      refId="Package\source to staging\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[Org ID]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="Org ID"
-                      externalMetadataColumnId="Package\source to staging\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[OrgID]"
-                      lineageId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[Org ID]" />
-                    <inputColumn
                       refId="Package\source to staging\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[Subscription ID]"
                       cachedDataType="wstr"
                       cachedLength="255"
                       cachedName="Subscription ID"
                       externalMetadataColumnId="Package\source to staging\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[SubscriptionID]"
-                      lineageId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[Subscription ID]" />
+                      lineageId="Package\source to staging\243:invalid" />
                     <inputColumn
                       refId="Package\source to staging\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[修改者]"
                       cachedDataType="wstr"
                       cachedLength="255"
                       cachedName="修改者"
                       externalMetadataColumnId="Package\source to staging\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[Modifier]"
-                      lineageId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[修改者]" />
+                      lineageId="Package\source to staging\247:invalid" />
                     <inputColumn
                       refId="Package\source to staging\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[创建时间]"
                       cachedDataType="date"
                       cachedName="创建时间"
                       externalMetadataColumnId="Package\source to staging\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[CreationTime]"
-                      lineageId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[创建时间]" />
+                      lineageId="Package\source to staging\246:invalid" />
                     <inputColumn
                       refId="Package\source to staging\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[修改时间]"
                       cachedDataType="date"
                       cachedName="修改时间"
                       externalMetadataColumnId="Package\source to staging\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[ModificationTime]"
-                      lineageId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[修改时间]" />
+                      lineageId="Package\source to staging\245:invalid" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -1236,7 +987,7 @@
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">HistoryData</property>
+                  name="OpenRowset">AzulCase</property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -1282,6 +1033,25 @@
                   name="OLE DB Source Output">
                   <outputColumns>
                     <outputColumn
+                      refId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[ID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ID]"
+                      lineageId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[ID]"
+                      name="ID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[(不要修改) 案例]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[(不要修改) 案例]"
+                      length="255"
+                      lineageId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[(不要修改) 案例]"
+                      name="(不要修改) 案例"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
                       refId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[(不要修改) 行校验和]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
@@ -1293,12 +1063,22 @@
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[(不要修改) 修改时间]"
-                      dataType="r8"
+                      dataType="date"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[(不要修改) 修改时间]"
                       lineageId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[(不要修改) 修改时间]"
                       name="(不要修改) 修改时间"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[Severity]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Severity]"
+                      length="255"
+                      lineageId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[Severity]"
+                      name="Severity"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[SR]"
@@ -1321,95 +1101,6 @@
                       name="Title"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[lookupsource]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[lookupsource]"
-                      length="255"
-                      lineageId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[lookupsource]"
-                      name="lookupsource"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[Product]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Product]"
-                      length="255"
-                      lineageId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[Product]"
-                      name="Product"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[Org ID]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Org ID]"
-                      length="255"
-                      lineageId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[Org ID]"
-                      name="Org ID"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[Seat]"
-                      dataType="r8"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Seat]"
-                      lineageId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[Seat]"
-                      name="Seat"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[Severity]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Severity]"
-                      length="255"
-                      lineageId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[Severity]"
-                      name="Severity"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[Tenant ID]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Tenant ID]"
-                      length="255"
-                      lineageId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[Tenant ID]"
-                      name="Tenant ID"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[Customer Type]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Customer Type]"
-                      length="255"
-                      lineageId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[Customer Type]"
-                      name="Customer Type"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[closedclassification]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[closedclassification]"
-                      length="255"
-                      lineageId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[closedclassification]"
-                      name="closedclassification"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[Inquire Type]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Inquire Type]"
-                      length="255"
-                      lineageId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[Inquire Type]"
-                      name="Inquire Type"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
                       refId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[负责人]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
@@ -1420,14 +1111,24 @@
                       name="负责人"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[Partner]"
+                      refId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[当前负责人团队]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Partner]"
+                      externalMetadataColumnId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[当前负责人团队]"
                       length="255"
-                      lineageId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[Partner]"
-                      name="Partner"
+                      lineageId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[当前负责人团队]"
+                      name="当前负责人团队"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[联系人]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[联系人]"
+                      length="255"
+                      lineageId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[联系人]"
+                      name="联系人"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[工单归属公司]"
@@ -1440,84 +1141,44 @@
                       name="工单归属公司"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[Partner Type]"
+                      refId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[Product]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Partner Type]"
+                      externalMetadataColumnId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Product]"
                       length="255"
-                      lineageId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[Partner Type]"
-                      name="Partner Type"
+                      lineageId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[Product]"
+                      name="Product"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[域名]"
+                      refId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[Customer Type]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[域名]"
+                      externalMetadataColumnId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Customer Type]"
                       length="255"
-                      lineageId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[域名]"
-                      name="域名"
+                      lineageId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[Customer Type]"
+                      name="Customer Type"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[Case Type]"
+                      refId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[Subscription Type]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Case Type]"
+                      externalMetadataColumnId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Subscription Type]"
                       length="255"
-                      lineageId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[Case Type]"
-                      name="Case Type"
+                      lineageId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[Subscription Type]"
+                      name="Subscription Type"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[Case状态]"
+                      refId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[Org ID]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Case状态]"
+                      externalMetadataColumnId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Org ID]"
                       length="255"
-                      lineageId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[Case状态]"
-                      name="Case状态"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[备注]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[备注]"
-                      length="255"
-                      lineageId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[备注]"
-                      name="备注"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[PoD Problem Type]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PoD Problem Type]"
-                      length="255"
-                      lineageId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[PoD Problem Type]"
-                      name="PoD Problem Type"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[PoD Product]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PoD Product]"
-                      length="255"
-                      lineageId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[PoD Product]"
-                      name="PoD Product"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[PoD Category]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PoD Category]"
-                      length="255"
-                      lineageId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[PoD Category]"
-                      name="PoD Category"
+                      lineageId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[Org ID]"
+                      name="Org ID"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[IssueCode]"
@@ -1530,14 +1191,24 @@
                       name="IssueCode"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[RootCause]"
+                      refId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[Inquire Type]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[RootCause]"
+                      externalMetadataColumnId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Inquire Type]"
                       length="255"
-                      lineageId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[RootCause]"
-                      name="RootCause"
+                      lineageId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[Inquire Type]"
+                      name="Inquire Type"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[快速备注]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[快速备注]"
+                      length="255"
+                      lineageId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[快速备注]"
+                      name="快速备注"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[lssue Description]"
@@ -1550,16 +1221,6 @@
                       name="lssue Description"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[SLA 状态]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SLA 状态]"
-                      length="255"
-                      lineageId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[SLA 状态]"
-                      name="SLA 状态"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
                       refId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[首选联系方式]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
@@ -1568,6 +1229,26 @@
                       length="255"
                       lineageId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[首选联系方式]"
                       name="首选联系方式"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[CaseAge]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CaseAge]"
+                      length="255"
+                      lineageId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[CaseAge]"
+                      name="CaseAge"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[SLA 状态]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SLA 状态]"
+                      length="255"
+                      lineageId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[SLA 状态]"
+                      name="SLA 状态"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[SLA 响应时间]"
@@ -1579,14 +1260,14 @@
                       name="SLA 响应时间"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[Subscription ID]"
+                      refId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[Case状态]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Subscription ID]"
+                      externalMetadataColumnId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Case状态]"
                       length="255"
-                      lineageId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[Subscription ID]"
-                      name="Subscription ID"
+                      lineageId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[Case状态]"
+                      name="Case状态"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[关闭原因]"
@@ -1599,13 +1280,24 @@
                       name="关闭原因"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[修改时间]"
-                      dataType="date"
+                      refId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[Source]"
+                      dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[修改时间]"
-                      lineageId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[修改时间]"
-                      name="修改时间"
+                      externalMetadataColumnId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Source]"
+                      length="255"
+                      lineageId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[Source]"
+                      name="Source"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[Subscription ID]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Subscription ID]"
+                      length="255"
+                      lineageId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[Subscription ID]"
+                      name="Subscription ID"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[创建时间]"
@@ -1615,6 +1307,15 @@
                       externalMetadataColumnId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[创建时间]"
                       lineageId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[创建时间]"
                       name="创建时间"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[修改时间]"
+                      dataType="date"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[修改时间]"
+                      lineageId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[修改时间]"
+                      name="修改时间"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[修改者]"
@@ -1627,15 +1328,6 @@
                       name="修改者"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[ID]"
-                      dataType="i4"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ID]"
-                      lineageId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[ID]"
-                      name="ID"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
                       refId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[创建者]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
@@ -1644,16 +1336,6 @@
                       length="255"
                       lineageId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[创建者]"
                       name="创建者"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[(不要修改) 案例]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[(不要修改) 案例]"
-                      length="255"
-                      lineageId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[(不要修改) 案例]"
-                      name="(不要修改) 案例"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[ReportMonth]"
@@ -1668,14 +1350,28 @@
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
+                      refId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ID]"
+                      dataType="i4"
+                      name="ID" />
+                    <externalMetadataColumn
+                      refId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[(不要修改) 案例]"
+                      dataType="wstr"
+                      length="255"
+                      name="(不要修改) 案例" />
+                    <externalMetadataColumn
                       refId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[(不要修改) 行校验和]"
                       dataType="wstr"
                       length="255"
                       name="(不要修改) 行校验和" />
                     <externalMetadataColumn
                       refId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[(不要修改) 修改时间]"
-                      dataType="r8"
+                      dataType="date"
                       name="(不要修改) 修改时间" />
+                    <externalMetadataColumn
+                      refId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Severity]"
+                      dataType="wstr"
+                      length="255"
+                      name="Severity" />
                     <externalMetadataColumn
                       refId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SR]"
                       dataType="wstr"
@@ -1687,170 +1383,122 @@
                       length="255"
                       name="Title" />
                     <externalMetadataColumn
-                      refId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[lookupsource]"
-                      dataType="wstr"
-                      length="255"
-                      name="lookupsource" />
-                    <externalMetadataColumn
-                      refId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Product]"
-                      dataType="wstr"
-                      length="255"
-                      name="Product" />
-                    <externalMetadataColumn
-                      refId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Org ID]"
-                      dataType="wstr"
-                      length="255"
-                      name="Org ID" />
-                    <externalMetadataColumn
-                      refId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Seat]"
-                      dataType="r8"
-                      name="Seat" />
-                    <externalMetadataColumn
-                      refId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Severity]"
-                      dataType="wstr"
-                      length="255"
-                      name="Severity" />
-                    <externalMetadataColumn
-                      refId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Tenant ID]"
-                      dataType="wstr"
-                      length="255"
-                      name="Tenant ID" />
-                    <externalMetadataColumn
-                      refId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Customer Type]"
-                      dataType="wstr"
-                      length="255"
-                      name="Customer Type" />
-                    <externalMetadataColumn
-                      refId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[closedclassification]"
-                      dataType="wstr"
-                      length="255"
-                      name="closedclassification" />
-                    <externalMetadataColumn
-                      refId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Inquire Type]"
-                      dataType="wstr"
-                      length="255"
-                      name="Inquire Type" />
-                    <externalMetadataColumn
                       refId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[负责人]"
                       dataType="wstr"
                       length="255"
                       name="负责人" />
                     <externalMetadataColumn
-                      refId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Partner]"
+                      refId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[当前负责人团队]"
                       dataType="wstr"
                       length="255"
-                      name="Partner" />
+                      name="当前负责人团队" />
+                    <externalMetadataColumn
+                      refId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[联系人]"
+                      dataType="wstr"
+                      length="255"
+                      name="联系人" />
                     <externalMetadataColumn
                       refId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[工单归属公司]"
                       dataType="wstr"
                       length="255"
                       name="工单归属公司" />
                     <externalMetadataColumn
-                      refId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Partner Type]"
+                      refId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Product]"
                       dataType="wstr"
                       length="255"
-                      name="Partner Type" />
+                      name="Product" />
                     <externalMetadataColumn
-                      refId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[域名]"
+                      refId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Customer Type]"
                       dataType="wstr"
                       length="255"
-                      name="域名" />
+                      name="Customer Type" />
                     <externalMetadataColumn
-                      refId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Case Type]"
+                      refId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Subscription Type]"
                       dataType="wstr"
                       length="255"
-                      name="Case Type" />
+                      name="Subscription Type" />
                     <externalMetadataColumn
-                      refId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Case状态]"
+                      refId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Org ID]"
                       dataType="wstr"
                       length="255"
-                      name="Case状态" />
-                    <externalMetadataColumn
-                      refId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[备注]"
-                      dataType="wstr"
-                      length="255"
-                      name="备注" />
-                    <externalMetadataColumn
-                      refId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PoD Problem Type]"
-                      dataType="wstr"
-                      length="255"
-                      name="PoD Problem Type" />
-                    <externalMetadataColumn
-                      refId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PoD Product]"
-                      dataType="wstr"
-                      length="255"
-                      name="PoD Product" />
-                    <externalMetadataColumn
-                      refId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PoD Category]"
-                      dataType="wstr"
-                      length="255"
-                      name="PoD Category" />
+                      name="Org ID" />
                     <externalMetadataColumn
                       refId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[IssueCode]"
                       dataType="wstr"
                       length="255"
                       name="IssueCode" />
                     <externalMetadataColumn
-                      refId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[RootCause]"
+                      refId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Inquire Type]"
                       dataType="wstr"
                       length="255"
-                      name="RootCause" />
+                      name="Inquire Type" />
+                    <externalMetadataColumn
+                      refId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[快速备注]"
+                      dataType="wstr"
+                      length="255"
+                      name="快速备注" />
                     <externalMetadataColumn
                       refId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[lssue Description]"
                       dataType="wstr"
                       length="255"
                       name="lssue Description" />
                     <externalMetadataColumn
-                      refId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SLA 状态]"
-                      dataType="wstr"
-                      length="255"
-                      name="SLA 状态" />
-                    <externalMetadataColumn
                       refId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[首选联系方式]"
                       dataType="wstr"
                       length="255"
                       name="首选联系方式" />
                     <externalMetadataColumn
+                      refId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CaseAge]"
+                      dataType="wstr"
+                      length="255"
+                      name="CaseAge" />
+                    <externalMetadataColumn
+                      refId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SLA 状态]"
+                      dataType="wstr"
+                      length="255"
+                      name="SLA 状态" />
+                    <externalMetadataColumn
                       refId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SLA 响应时间]"
                       dataType="date"
                       name="SLA 响应时间" />
                     <externalMetadataColumn
-                      refId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Subscription ID]"
+                      refId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Case状态]"
                       dataType="wstr"
                       length="255"
-                      name="Subscription ID" />
+                      name="Case状态" />
                     <externalMetadataColumn
                       refId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[关闭原因]"
                       dataType="wstr"
                       length="255"
                       name="关闭原因" />
                     <externalMetadataColumn
-                      refId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[修改时间]"
-                      dataType="date"
-                      name="修改时间" />
+                      refId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Source]"
+                      dataType="wstr"
+                      length="255"
+                      name="Source" />
+                    <externalMetadataColumn
+                      refId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Subscription ID]"
+                      dataType="wstr"
+                      length="255"
+                      name="Subscription ID" />
                     <externalMetadataColumn
                       refId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[创建时间]"
                       dataType="date"
                       name="创建时间" />
+                    <externalMetadataColumn
+                      refId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[修改时间]"
+                      dataType="date"
+                      name="修改时间" />
                     <externalMetadataColumn
                       refId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[修改者]"
                       dataType="wstr"
                       length="255"
                       name="修改者" />
                     <externalMetadataColumn
-                      refId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ID]"
-                      dataType="i4"
-                      name="ID" />
-                    <externalMetadataColumn
                       refId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[创建者]"
                       dataType="wstr"
                       length="255"
                       name="创建者" />
-                    <externalMetadataColumn
-                      refId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[(不要修改) 案例]"
-                      dataType="wstr"
-                      length="255"
-                      name="(不要修改) 案例" />
                     <externalMetadataColumn
                       refId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ReportMonth]"
                       dataType="r8"
@@ -1869,11 +1517,10 @@
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[(不要修改) 行校验和]"
-                      dataType="wstr"
-                      length="255"
-                      lineageId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[(不要修改) 行校验和]"
-                      name="(不要修改) 行校验和" />
+                      refId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ID]"
+                      dataType="i4"
+                      lineageId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ID]"
+                      name="ID" />
                     <outputColumn
                       refId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[(不要修改) 案例]"
                       dataType="wstr"
@@ -1881,10 +1528,22 @@
                       lineageId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[(不要修改) 案例]"
                       name="(不要修改) 案例" />
                     <outputColumn
+                      refId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[(不要修改) 行校验和]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[(不要修改) 行校验和]"
+                      name="(不要修改) 行校验和" />
+                    <outputColumn
                       refId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[(不要修改) 修改时间]"
-                      dataType="r8"
+                      dataType="date"
                       lineageId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[(不要修改) 修改时间]"
                       name="(不要修改) 修改时间" />
+                    <outputColumn
+                      refId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Severity]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Severity]"
+                      name="Severity" />
                     <outputColumn
                       refId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SR]"
                       dataType="wstr"
@@ -1898,70 +1557,23 @@
                       lineageId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Title]"
                       name="Title" />
                     <outputColumn
-                      refId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[lookupsource]"
-                      dataType="wstr"
-                      length="255"
-                      lineageId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[lookupsource]"
-                      name="lookupsource" />
-                    <outputColumn
-                      refId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Product]"
-                      dataType="wstr"
-                      length="255"
-                      lineageId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Product]"
-                      name="Product" />
-                    <outputColumn
-                      refId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Org ID]"
-                      dataType="wstr"
-                      length="255"
-                      lineageId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Org ID]"
-                      name="Org ID" />
-                    <outputColumn
-                      refId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Seat]"
-                      dataType="r8"
-                      lineageId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Seat]"
-                      name="Seat" />
-                    <outputColumn
-                      refId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Severity]"
-                      dataType="wstr"
-                      length="255"
-                      lineageId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Severity]"
-                      name="Severity" />
-                    <outputColumn
-                      refId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Tenant ID]"
-                      dataType="wstr"
-                      length="255"
-                      lineageId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Tenant ID]"
-                      name="Tenant ID" />
-                    <outputColumn
-                      refId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Customer Type]"
-                      dataType="wstr"
-                      length="255"
-                      lineageId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Customer Type]"
-                      name="Customer Type" />
-                    <outputColumn
-                      refId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[closedclassification]"
-                      dataType="wstr"
-                      length="255"
-                      lineageId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[closedclassification]"
-                      name="closedclassification" />
-                    <outputColumn
-                      refId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Inquire Type]"
-                      dataType="wstr"
-                      length="255"
-                      lineageId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Inquire Type]"
-                      name="Inquire Type" />
-                    <outputColumn
                       refId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[负责人]"
                       dataType="wstr"
                       length="255"
                       lineageId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[负责人]"
                       name="负责人" />
                     <outputColumn
-                      refId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Partner]"
+                      refId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[当前负责人团队]"
                       dataType="wstr"
                       length="255"
-                      lineageId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Partner]"
-                      name="Partner" />
+                      lineageId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[当前负责人团队]"
+                      name="当前负责人团队" />
+                    <outputColumn
+                      refId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[联系人]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[联系人]"
+                      name="联系人" />
                     <outputColumn
                       refId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[工单归属公司]"
                       dataType="wstr"
@@ -1969,53 +1581,29 @@
                       lineageId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[工单归属公司]"
                       name="工单归属公司" />
                     <outputColumn
-                      refId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Partner Type]"
+                      refId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Product]"
                       dataType="wstr"
                       length="255"
-                      lineageId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Partner Type]"
-                      name="Partner Type" />
+                      lineageId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Product]"
+                      name="Product" />
                     <outputColumn
-                      refId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[域名]"
+                      refId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Customer Type]"
                       dataType="wstr"
                       length="255"
-                      lineageId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[域名]"
-                      name="域名" />
+                      lineageId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Customer Type]"
+                      name="Customer Type" />
                     <outputColumn
-                      refId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Case Type]"
+                      refId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Subscription Type]"
                       dataType="wstr"
                       length="255"
-                      lineageId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Case Type]"
-                      name="Case Type" />
+                      lineageId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Subscription Type]"
+                      name="Subscription Type" />
                     <outputColumn
-                      refId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Case状态]"
+                      refId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Org ID]"
                       dataType="wstr"
                       length="255"
-                      lineageId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Case状态]"
-                      name="Case状态" />
-                    <outputColumn
-                      refId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[备注]"
-                      dataType="wstr"
-                      length="255"
-                      lineageId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[备注]"
-                      name="备注" />
-                    <outputColumn
-                      refId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PoD Problem Type]"
-                      dataType="wstr"
-                      length="255"
-                      lineageId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PoD Problem Type]"
-                      name="PoD Problem Type" />
-                    <outputColumn
-                      refId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PoD Product]"
-                      dataType="wstr"
-                      length="255"
-                      lineageId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PoD Product]"
-                      name="PoD Product" />
-                    <outputColumn
-                      refId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PoD Category]"
-                      dataType="wstr"
-                      length="255"
-                      lineageId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PoD Category]"
-                      name="PoD Category" />
+                      lineageId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Org ID]"
+                      name="Org ID" />
                     <outputColumn
                       refId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[IssueCode]"
                       dataType="wstr"
@@ -2023,11 +1611,17 @@
                       lineageId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[IssueCode]"
                       name="IssueCode" />
                     <outputColumn
-                      refId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[RootCause]"
+                      refId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Inquire Type]"
                       dataType="wstr"
                       length="255"
-                      lineageId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[RootCause]"
-                      name="RootCause" />
+                      lineageId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Inquire Type]"
+                      name="Inquire Type" />
+                    <outputColumn
+                      refId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[快速备注]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[快速备注]"
+                      name="快速备注" />
                     <outputColumn
                       refId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[lssue Description]"
                       dataType="wstr"
@@ -2035,28 +1629,34 @@
                       lineageId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[lssue Description]"
                       name="lssue Description" />
                     <outputColumn
-                      refId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SLA 状态]"
-                      dataType="wstr"
-                      length="255"
-                      lineageId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SLA 状态]"
-                      name="SLA 状态" />
-                    <outputColumn
                       refId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[首选联系方式]"
                       dataType="wstr"
                       length="255"
                       lineageId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[首选联系方式]"
                       name="首选联系方式" />
                     <outputColumn
+                      refId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CaseAge]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CaseAge]"
+                      name="CaseAge" />
+                    <outputColumn
+                      refId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SLA 状态]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SLA 状态]"
+                      name="SLA 状态" />
+                    <outputColumn
                       refId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SLA 响应时间]"
                       dataType="date"
                       lineageId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SLA 响应时间]"
                       name="SLA 响应时间" />
                     <outputColumn
-                      refId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Subscription ID]"
+                      refId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Case状态]"
                       dataType="wstr"
                       length="255"
-                      lineageId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Subscription ID]"
-                      name="Subscription ID" />
+                      lineageId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Case状态]"
+                      name="Case状态" />
                     <outputColumn
                       refId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[关闭原因]"
                       dataType="wstr"
@@ -2064,26 +1664,33 @@
                       lineageId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[关闭原因]"
                       name="关闭原因" />
                     <outputColumn
-                      refId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[修改时间]"
-                      dataType="date"
-                      lineageId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[修改时间]"
-                      name="修改时间" />
+                      refId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Source]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Source]"
+                      name="Source" />
+                    <outputColumn
+                      refId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Subscription ID]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Subscription ID]"
+                      name="Subscription ID" />
                     <outputColumn
                       refId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[创建时间]"
                       dataType="date"
                       lineageId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[创建时间]"
                       name="创建时间" />
                     <outputColumn
+                      refId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[修改时间]"
+                      dataType="date"
+                      lineageId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[修改时间]"
+                      name="修改时间" />
+                    <outputColumn
                       refId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[修改者]"
                       dataType="wstr"
                       length="255"
                       lineageId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[修改者]"
                       name="修改者" />
-                    <outputColumn
-                      refId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ID]"
-                      dataType="i4"
-                      lineageId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ID]"
-                      name="ID" />
                     <outputColumn
                       refId="Package\source to staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[创建者]"
                       dataType="wstr"
@@ -3091,7 +2698,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
                       refId="Package\source to staging\Script Component.Inputs[Input 0].Columns[ErrorCode]"
                       cachedDataType="i4"
                       cachedName="ErrorCode"
-                      lineageId="Package\source to staging\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]" />
+                      lineageId="Package\source to staging\109:invalid" />
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
@@ -3131,11 +2738,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
               endId="Package\source to staging\Output type conversion.Inputs[Data Conversion Input]"
               name="Derived Column Output"
               startId="Package\source to staging\Derived Column.Outputs[Derived Column Output]" />
-            <path
-              refId="Package\source to staging.Paths[OLE DB Destination Error Output]"
-              endId="Package\source to staging\Script Component.Inputs[Input 0]"
-              name="OLE DB Destination Error Output"
-              startId="Package\source to staging\OLE DB Destination.Outputs[OLE DB Destination Error Output]" />
             <path
               refId="Package\source to staging.Paths[OLE DB Source Output]"
               endId="Package\source to staging\Concatenate Month Id.Inputs[Data Conversion Input]"
@@ -5151,34 +4753,26 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
         <NodeLayout
           Size="158,42"
           Id="Package\source to staging\Derived Column"
-          TopLeft="314,186" />
-        <NodeLayout
-          Size="157,42"
-          Id="Package\source to staging\OLE DB Source"
-          TopLeft="286,24" />
+          TopLeft="314,187" />
         <NodeLayout
           Size="211,42"
           Id="Package\source to staging\Output type conversion"
-          TopLeft="293,289" />
-        <NodeLayout
-          Size="177,42"
-          Id="Package\source to staging\OLE DB Destination"
-          TopLeft="421,400" />
+          TopLeft="293,290" />
         <NodeLayout
           Size="186,42"
           Id="Package\source to staging\OLE DB Destination 1"
-          TopLeft="645,529" />
+          TopLeft="645,530" />
         <NodeLayout
           Size="175,42"
           Id="Package\source to staging\Script Component"
-          TopLeft="286,502" />
+          TopLeft="286,503" />
         <NodeLayout
           Size="187,42"
           Id="Package\source to staging\Concatenate Month Id"
-          TopLeft="300,127" />
+          TopLeft="300,128" />
         <EdgeLayout
           Id="Package\source to staging.Paths[Output 0]"
-          TopLeft="461,523">
+          TopLeft="461,524">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -5208,85 +4802,13 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\source to staging.Paths[OLE DB Source Output]"
-          TopLeft="364.5,66">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="29,61"
-              Start="0,0"
-              End="29,53.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,26.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,26.5"
-                    Point2="0,30.5"
-                    Point3="4,30.5" />
-                  <mssgle:LineSegment
-                    End="25,30.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="25,30.5"
-                    Point2="29,30.5"
-                    Point3="29,34.5" />
-                  <mssgle:LineSegment
-                    End="29,53.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\source to staging.Paths[OLE DB Destination Error Output]"
-          TopLeft="509.5,442">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-136,60"
-              Start="0,0"
-              End="-136,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,26" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,26"
-                    Point2="0,30"
-                    Point3="-4,30" />
-                  <mssgle:LineSegment
-                    End="-132,30" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-132,30"
-                    Point2="-136,30"
-                    Point3="-136,34" />
-                  <mssgle:LineSegment
-                    End="-136,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-141.20890625,35,146.4178125,11.43359375"
+              BoundingBox="84,-22,16,16"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\source to staging.Paths[Derived Column Output]"
-          TopLeft="395.75,228">
+          TopLeft="395.75,229">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -5303,50 +4825,12 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\source to staging.Paths[Data Conversion Output1]"
-          TopLeft="398.5,331">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="82.8333333333333,69"
-              Start="0,0"
-              End="82.8333333333333,61.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,37.0291153415454" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,37.0291153415454"
-                    Point2="0,41.0291153415454"
-                    Point3="4,41.0291153415454" />
-                  <mssgle:LineSegment
-                    End="78.8333333333333,41.0291153415454" />
-                  <mssgle:CubicBezierSegment
-                    Point1="78.8333333333333,41.0291153415454"
-                    Point2="82.8333333333333,41.0291153415454"
-                    Point3="82.8333333333333,45.0291153415454" />
-                  <mssgle:LineSegment
-                    End="82.8333333333333,61.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\source to staging.Paths[Data Conversion Output]"
-          TopLeft="487,148">
+          TopLeft="487,149">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -5375,40 +4859,88 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="157,52"
+          Id="Package\source to staging\OLE DB Source"
+          TopLeft="279,0" />
+        <EdgeLayout
+          Id="Package\source to staging.Paths[OLE DB Source Output]"
+          TopLeft="357.5,52">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="36,76"
+              Start="0,0"
+              End="36,68.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,34" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,34"
+                    Point2="0,38"
+                    Point3="4,38" />
+                  <mssgle:LineSegment
+                    End="32,38" />
+                  <mssgle:CubicBezierSegment
+                    Point1="32,38"
+                    Point2="36,38"
+                    Point3="36,42" />
+                  <mssgle:LineSegment
+                    End="36,68.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="177,42"
+          Id="Package\source to staging\OLE DB Destination"
+          TopLeft="291,393" />
+        <EdgeLayout
+          Id="Package\source to staging.Paths[Data Conversion Output1]"
+          TopLeft="398.5,332">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-19,61"
+              Start="0,0"
+              End="-19,53.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,26.5"
+                    Point2="0,30.5"
+                    Point3="-4,30.5" />
+                  <mssgle:LineSegment
+                    End="-15,30.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-15,30.5"
+                    Point2="-19,30.5"
+                    Point3="-19,34.5" />
+                  <mssgle:LineSegment
+                    End="-19,53.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\source to staging\OLE DB Source">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\source to staging\OLE DB Destination">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\source to staging\OLE DB Destination 1">
     <Properties>
@@ -5542,6 +5074,32 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\staging to prod\ErrorRows">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\source to staging\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\source to staging\OLE DB Destination">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
