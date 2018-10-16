@@ -2,7 +2,7 @@
 <BuildLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ProjectInfo>
     <Name>PartnerData</Name>
-    <LastWriteTime>2018-10-12T08:55:47.5081289Z</LastWriteTime>
+    <LastWriteTime>2018-10-16T04:09:03.301964Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
@@ -12,18 +12,13 @@
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
-      <Name>AzulTable.dtsx</Name>
-      <LastWriteTime>2018-10-12T03:25:41.0851863Z</LastWriteTime>
-      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
-    </ProjectBuildItemInfo>
-    <ProjectBuildItemInfo>
       <Name>HistoryData.dtsx</Name>
-      <LastWriteTime>2018-10-12T08:55:47.4511335Z</LastWriteTime>
+      <LastWriteTime>2018-10-16T02:44:40.6267197Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
-      <Name>Testpkg.dtsx</Name>
-      <LastWriteTime>2018-10-12T08:55:47.3551541Z</LastWriteTime>
+      <Name>TestPackage.dtsx</Name>
+      <LastWriteTime>2018-10-16T07:08:02.4991197Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>
