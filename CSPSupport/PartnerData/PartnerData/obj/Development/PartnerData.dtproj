@@ -26,7 +26,7 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">HANXU5-L-1</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAqmDlAl3XekGFTfOp3eTpOQAAAAACAAAAAAADZgAAwAAAABAAAAA/gnBNX7Sk2kmEHmINR2t6AAAAAASAAACgAAAAEAAAAOw/RkDIGWAEMKGr6ASPgwmIAAAALGiPOp78u3FIoImGm1lTkyjTKnrU1MR7/Ksrm7QEzRZyp9rqBpG0KQGGBfTW310lnoWIBkhTKZ/J+UmLe2vxoDotGY9amxhNntaWfHqP7J8cHObcpHTE3ENJ/E6TpDFKCotJYvTaFFM0YAX5EMfhTpW1maK4QJdJdhE9oTRTSXNpUErBCenCShQAAADNrp3msV33+OMSeNt+9+19876nYQ==</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAqmDlAl3XekGFTfOp3eTpOQAAAAACAAAAAAADZgAAwAAAABAAAABB/gs7b9Q6GuGAXiRy+JrVAAAAAASAAACgAAAAEAAAAJPvIFdPLJZGRD0gFQ7+itKIAAAA89Yo/EEXjB6kMYfKOqafQR9RSyqBfQ7hgGKPHiMpBfqaU+w+yy4ddaH9GRJX6KayLtdwSxHm5rFjiu6f01gq+a6rQGt34qbQk8Ir7azcQ6PPtpcsJ1vUsL8RLBP21st93Q6Pn9Vdg0G0yEFMKfhOW3i1B6fSMwt5BcOSIZYbMUoRLwp00v1GhhQAAAD5SLSyhc3PNQoP1v7Q7Q5hvPwLvg==</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
@@ -329,10 +329,10 @@
                 <SSIS:Property SSIS:Name="Name">HistoryData</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">25</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">27</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{735ACD5C-2761-4CE2-9C69-2E390EFC79F9}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{0440BB14-0BFC-41F5-BBE7-C099827936E0}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -346,10 +346,10 @@
                 <SSIS:Property SSIS:Name="Name">AzulCaseExtract</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">38</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">40</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{5B42190D-87E7-424E-9708-762EEC44A331}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{94540E66-4544-4DFD-8F5B-2364411D50C2}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>

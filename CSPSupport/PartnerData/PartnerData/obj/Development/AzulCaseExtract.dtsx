@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="AzulCaseExtract"
   DTS:PackageType="5"
-  DTS:VersionBuild="38"
-  DTS:VersionGUID="{5B42190D-87E7-424E-9708-762EEC44A331}">
+  DTS:VersionBuild="40"
+  DTS:VersionGUID="{94540E66-4544-4DFD-8F5B-2364411D50C2}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -134,15 +134,15 @@
                   name="Data Conversion Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Extract to Staging Table\cut month and it to 6bit.Inputs[Data Conversion Input].Columns[Report Month]"
-                      cachedDataType="r8"
-                      cachedName="Report Month"
-                      lineageId="Package\Extract to Staging Table\OLE DB Source.Outputs[OLE DB Source Output].Columns[Report Month]" />
-                    <inputColumn
                       refId="Package\Extract to Staging Table\cut month and it to 6bit.Inputs[Data Conversion Input].Columns[ID]"
                       cachedDataType="i4"
                       cachedName="ID"
                       lineageId="Package\Extract to Staging Table\OLE DB Source.Outputs[OLE DB Source Output].Columns[ID]" />
+                    <inputColumn
+                      refId="Package\Extract to Staging Table\cut month and it to 6bit.Inputs[Data Conversion Input].Columns[ReportMonth]"
+                      cachedDataType="r8"
+                      cachedName="ReportMonth"
+                      lineageId="Package\Extract to Staging Table\OLE DB Source.Outputs[OLE DB Source Output].Columns[ReportMonth]" />
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
@@ -169,7 +169,7 @@
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Extract to Staging Table\OLE DB Source.Outputs[OLE DB Source Output].Columns[Report Month]}</property>
+                          name="SourceInputColumnLineageID">#{Package\Extract to Staging Table\OLE DB Source.Outputs[OLE DB Source Output].Columns[ReportMonth]}</property>
                         <property
                           dataType="System.Boolean"
                           description="Indicates whether the column uses the faster, locale-neutral parsing routines."
@@ -372,7 +372,7 @@
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">Azul201809</property>
+                  name="OpenRowset">AzulCase</property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -849,13 +849,23 @@
                       name="ID"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Extract to Staging Table\OLE DB Source.Outputs[OLE DB Source Output].Columns[Report Month]"
+                      refId="Package\Extract to Staging Table\OLE DB Source.Outputs[OLE DB Source Output].Columns[电子邮件 (联系人) (联系人)]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extract to Staging Table\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[电子邮件 (联系人) (联系人)]"
+                      length="255"
+                      lineageId="Package\Extract to Staging Table\OLE DB Source.Outputs[OLE DB Source Output].Columns[电子邮件 (联系人) (联系人)]"
+                      name="电子邮件 (联系人) (联系人)"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Extract to Staging Table\OLE DB Source.Outputs[OLE DB Source Output].Columns[ReportMonth]"
                       dataType="r8"
                       errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="RedirectRow"
-                      externalMetadataColumnId="Package\Extract to Staging Table\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Report Month]"
-                      lineageId="Package\Extract to Staging Table\OLE DB Source.Outputs[OLE DB Source Output].Columns[Report Month]"
-                      name="Report Month"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extract to Staging Table\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ReportMonth]"
+                      lineageId="Package\Extract to Staging Table\OLE DB Source.Outputs[OLE DB Source Output].Columns[ReportMonth]"
+                      name="ReportMonth"
                       truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
@@ -1072,9 +1082,14 @@
                       dataType="i4"
                       name="ID" />
                     <externalMetadataColumn
-                      refId="Package\Extract to Staging Table\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Report Month]"
+                      refId="Package\Extract to Staging Table\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[电子邮件 (联系人) (联系人)]"
+                      dataType="wstr"
+                      length="255"
+                      name="电子邮件 (联系人) (联系人)" />
+                    <externalMetadataColumn
+                      refId="Package\Extract to Staging Table\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ReportMonth]"
                       dataType="r8"
-                      name="Report Month" />
+                      name="ReportMonth" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -1344,10 +1359,16 @@
                       lineageId="Package\Extract to Staging Table\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ID]"
                       name="ID" />
                     <outputColumn
-                      refId="Package\Extract to Staging Table\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Report Month]"
+                      refId="Package\Extract to Staging Table\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[电子邮件 (联系人) (联系人)]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Extract to Staging Table\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[电子邮件 (联系人) (联系人)]"
+                      name="电子邮件 (联系人) (联系人)" />
+                    <outputColumn
+                      refId="Package\Extract to Staging Table\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ReportMonth]"
                       dataType="r8"
-                      lineageId="Package\Extract to Staging Table\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Report Month]"
-                      name="Report Month" />
+                      lineageId="Package\Extract to Staging Table\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ReportMonth]"
+                      name="ReportMonth" />
                     <outputColumn
                       refId="Package\Extract to Staging Table\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                       dataType="i4"
@@ -2959,13 +2980,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
                       externalMetadataColumnId="Package\Extract to Staging Table\Staging Table.Inputs[OLE DB Destination Input].ExternalColumns[ContactPerson]"
                       lineageId="Package\Extract to Staging Table\OLE DB Source.Outputs[OLE DB Source Output].Columns[联系人]" />
                     <inputColumn
-                      refId="Package\Extract to Staging Table\Staging Table.Inputs[OLE DB Destination Input].Columns[SLA 状态]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="SLA 状态"
-                      externalMetadataColumnId="Package\Extract to Staging Table\Staging Table.Inputs[OLE DB Destination Input].ExternalColumns[TenantID]"
-                      lineageId="Package\Extract to Staging Table\OLE DB Source.Outputs[OLE DB Source Output].Columns[SLA 状态]" />
-                    <inputColumn
                       refId="Package\Extract to Staging Table\Staging Table.Inputs[OLE DB Destination Input].Columns[closedclassification]"
                       cachedDataType="wstr"
                       cachedLength="255"
@@ -3053,6 +3067,13 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
                       cachedName="Partner"
                       externalMetadataColumnId="Package\Extract to Staging Table\Staging Table.Inputs[OLE DB Destination Input].ExternalColumns[AzulPartner]"
                       lineageId="Package\Extract to Staging Table\OLE DB Source.Outputs[OLE DB Source Output].Columns[Partner]" />
+                    <inputColumn
+                      refId="Package\Extract to Staging Table\Staging Table.Inputs[OLE DB Destination Input].Columns[Tenant ID]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Tenant ID"
+                      externalMetadataColumnId="Package\Extract to Staging Table\Staging Table.Inputs[OLE DB Destination Input].ExternalColumns[TenantID]"
+                      lineageId="Package\Extract to Staging Table\OLE DB Source.Outputs[OLE DB Source Output].Columns[Tenant ID]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
