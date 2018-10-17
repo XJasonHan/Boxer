@@ -26,13 +26,13 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">HANXU5-L-1</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAqmDlAl3XekGFTfOp3eTpOQAAAAACAAAAAAADZgAAwAAAABAAAAANCftEflFOmRgGixYZgEBKAAAAAASAAACgAAAAEAAAAFJ7/WZWkXD8zJWd+MsPowmIAAAAUqPkUuAiCy5oVSJiNxUNmHgz7d5VYk/1KeDz5C6uuT40pTs8fWEbiEQNbeSzP6m0lKvTppZcCB+87JDIi3JRWi15kRRhPZy4wIIgR2vzWfhm2+3N7r0A5S+x1i+Jcwj0SFqmPbOdzH2hREyOh2pKhaa4bIr73rRoGzkpUgogO0hdMTs3jXo89RQAAADiDM39YLCL+djrN2gVDUajlk2yOQ==</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAqmDlAl3XekGFTfOp3eTpOQAAAAACAAAAAAADZgAAwAAAABAAAAA/gnBNX7Sk2kmEHmINR2t6AAAAAASAAACgAAAAEAAAAOw/RkDIGWAEMKGr6ASPgwmIAAAALGiPOp78u3FIoImGm1lTkyjTKnrU1MR7/Ksrm7QEzRZyp9rqBpG0KQGGBfTW310lnoWIBkhTKZ/J+UmLe2vxoDotGY9amxhNntaWfHqP7J8cHObcpHTE3ENJ/E6TpDFKCotJYvTaFFM0YAX5EMfhTpW1maK4QJdJdhE9oTRTSXNpUErBCenCShQAAADNrp3msV33+OMSeNt+9+19876nYQ==</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
           <SSIS:Package SSIS:Name="PartnerTable.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="HistoryData.dtsx" SSIS:EntryPoint="1" />
-          <SSIS:Package SSIS:Name="TestPackage.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="AzulCaseExtract.dtsx" SSIS:EntryPoint="1" />
         </SSIS:Packages>
         <SSIS:ConnectionManagers>
           <SSIS:ConnectionManager SSIS:Name="pbireporting.database.chinacloudapi.cn.PartnerCaseReport.pbiadmin.conmgr" />
@@ -340,16 +340,16 @@
               </SSIS:Properties>
               <SSIS:Parameters />
             </SSIS:PackageMetaData>
-            <SSIS:PackageMetaData SSIS:Name="TestPackage.dtsx">
+            <SSIS:PackageMetaData SSIS:Name="AzulCaseExtract.dtsx">
               <SSIS:Properties>
-                <SSIS:Property SSIS:Name="ID">{FDBE54D0-F235-4E48-94C7-4AA80505C844}</SSIS:Property>
-                <SSIS:Property SSIS:Name="Name">TestPackage</SSIS:Property>
+                <SSIS:Property SSIS:Name="ID">{F0D9FBC5-8E01-4A3E-9379-1A501434CEC8}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">AzulCaseExtract</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">27</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">38</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{897D9890-C6DE-485B-9297-4616CD34ED68}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{5B42190D-87E7-424E-9708-762EEC44A331}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
