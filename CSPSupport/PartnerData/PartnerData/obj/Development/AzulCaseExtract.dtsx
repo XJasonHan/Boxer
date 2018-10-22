@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="AzulCaseExtract"
   DTS:PackageType="5"
-  DTS:VersionBuild="40"
-  DTS:VersionGUID="{94540E66-4544-4DFD-8F5B-2364411D50C2}">
+  DTS:VersionBuild="42"
+  DTS:VersionGUID="{04113D11-0B80-4A9D-BF23-6E61553EAD05}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -528,10 +528,11 @@
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Extract to Staging Table\OLE DB Source.Outputs[OLE DB Source Output].Columns[lssue Description]"
-                      dataType="nText"
+                      dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="RedirectRow"
                       externalMetadataColumnId="Package\Extract to Staging Table\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[lssue Description]"
+                      length="255"
                       lineageId="Package\Extract to Staging Table\OLE DB Source.Outputs[OLE DB Source Output].Columns[lssue Description]"
                       name="lssue Description"
                       truncationRowDisposition="FailComponent" />
@@ -926,7 +927,8 @@
                       name="IssueCode" />
                     <externalMetadataColumn
                       refId="Package\Extract to Staging Table\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[lssue Description]"
-                      dataType="nText"
+                      dataType="wstr"
+                      length="255"
                       name="lssue Description" />
                     <externalMetadataColumn
                       refId="Package\Extract to Staging Table\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SLA 状态]"
@@ -1170,7 +1172,8 @@
                       name="IssueCode" />
                     <outputColumn
                       refId="Package\Extract to Staging Table\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[lssue Description]"
-                      dataType="nText"
+                      dataType="wstr"
+                      length="255"
                       lineageId="Package\Extract to Staging Table\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[lssue Description]"
                       name="lssue Description" />
                     <outputColumn
@@ -2445,7 +2448,8 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
                       lineageId="Package\Extract to Staging Table\OLE DB Source.Outputs[OLE DB Source Output].Columns[Inquire Type]" />
                     <inputColumn
                       refId="Package\Extract to Staging Table\staging error rows.Inputs[OLE DB Destination Input].Columns[lssue Description]"
-                      cachedDataType="nText"
+                      cachedDataType="wstr"
+                      cachedLength="255"
                       cachedName="lssue Description"
                       externalMetadataColumnId="Package\Extract to Staging Table\staging error rows.Inputs[OLE DB Destination Input].ExternalColumns[Description]"
                       lineageId="Package\Extract to Staging Table\OLE DB Source.Outputs[OLE DB Source Output].Columns[lssue Description]" />
@@ -2934,7 +2938,8 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
                       lineageId="Package\Extract to Staging Table\OLE DB Source.Outputs[OLE DB Source Output].Columns[SLA]" />
                     <inputColumn
                       refId="Package\Extract to Staging Table\Staging Table.Inputs[OLE DB Destination Input].Columns[lssue Description]"
-                      cachedDataType="nText"
+                      cachedDataType="wstr"
+                      cachedLength="255"
                       cachedName="lssue Description"
                       externalMetadataColumnId="Package\Extract to Staging Table\Staging Table.Inputs[OLE DB Destination Input].ExternalColumns[Description]"
                       lineageId="Package\Extract to Staging Table\OLE DB Source.Outputs[OLE DB Source Output].Columns[lssue Description]" />
@@ -6151,6 +6156,10 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
           Size="155,42"
           Id="Package\Staging to Prod"
           TopLeft="226,168" />
+        <NodeLayout
+          Size="214,42"
+          Id="Package\Truncate staging case table"
+          TopLeft="215,270" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
           TopLeft="313,98">
@@ -6185,10 +6194,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="214,42"
-          Id="Package\Truncate staging case table"
-          TopLeft="215,270" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
           TopLeft="303.5,210">
@@ -6232,21 +6237,25 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="175,42"
-          Id="Package\Extract to Staging Table\Script Component"
-          TopLeft="718,262" />
-        <NodeLayout
           Size="190,42"
           Id="Package\Extract to Staging Table\cut month and it to 6bit"
           TopLeft="202,148" />
         <NodeLayout
-          Size="167,42"
-          Id="Package\Extract to Staging Table\staging error rows"
-          TopLeft="829,126" />
+          Size="157,42"
+          Id="Package\Extract to Staging Table\OLE DB Source"
+          TopLeft="173,24" />
         <NodeLayout
           Size="161,42"
           Id="Package\Extract to Staging Table\Data Conversion"
           TopLeft="567,195" />
+        <NodeLayout
+          Size="175,42"
+          Id="Package\Extract to Staging Table\Script Component"
+          TopLeft="718,262" />
+        <NodeLayout
+          Size="167,42"
+          Id="Package\Extract to Staging Table\staging error rows"
+          TopLeft="829,126" />
         <NodeLayout
           Size="147,42"
           Id="Package\Extract to Staging Table\Staging Table"
@@ -6255,10 +6264,110 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
           Size="168,42"
           Id="Package\Extract to Staging Table\concatenate full id"
           TopLeft="291,242" />
-        <NodeLayout
-          Size="157,49"
-          Id="Package\Extract to Staging Table\OLE DB Source"
-          TopLeft="173,24" />
+        <EdgeLayout
+          Id="Package\Extract to Staging Table.Paths[OLE DB Source Output]"
+          TopLeft="251.5,66">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="45.5,82"
+              Start="0,0"
+              End="45.5,74.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,37" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,37"
+                    Point2="0,41"
+                    Point3="4,41" />
+                  <mssgle:LineSegment
+                    End="41.5,41" />
+                  <mssgle:CubicBezierSegment
+                    Point1="41.5,41"
+                    Point2="45.5,41"
+                    Point3="45.5,45" />
+                  <mssgle:LineSegment
+                    End="45.5,74.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Extract to Staging Table.Paths[OLE DB Destination Error Output]"
+          TopLeft="619,333">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="99,-50"
+              Start="0,0"
+              End="91.5,-50">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="45.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="45.5,0"
+                    Point2="49.5,0"
+                    Point3="49.5,-4" />
+                  <mssgle:LineSegment
+                    End="49.5,-46" />
+                  <mssgle:CubicBezierSegment
+                    Point1="49.5,-46"
+                    Point2="49.5,-50"
+                    Point3="53.5,-50" />
+                  <mssgle:LineSegment
+                    End="91.5,-50" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-23.70890625,1,146.4178125,11.43359375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Extract to Staging Table.Paths[Derived Column Output]"
+          TopLeft="459,263">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="108,-47"
+              Start="0,0"
+              End="100.5,-47">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="50,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="50,0"
+                    Point2="54,0"
+                    Point3="54,-4" />
+                  <mssgle:LineSegment
+                    End="54,-43" />
+                  <mssgle:CubicBezierSegment
+                    Point1="54,-43"
+                    Point2="54,-47"
+                    Point3="58,-47" />
+                  <mssgle:LineSegment
+                    End="100.5,-47" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Extract to Staging Table.Paths[Data Conversion Output1]"
           TopLeft="647.5,237">
@@ -6361,113 +6470,22 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Extract to Staging Table.Paths[OLE DB Source Output]"
-          TopLeft="251.5,73">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="45.5,75"
-              Start="0,0"
-              End="45.5,67.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,33.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,33.5"
-                    Point2="0,37.5"
-                    Point3="4,37.5" />
-                  <mssgle:LineSegment
-                    End="41.5,37.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="41.5,37.5"
-                    Point2="45.5,37.5"
-                    Point3="45.5,41.5" />
-                  <mssgle:LineSegment
-                    End="45.5,67.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Extract to Staging Table.Paths[OLE DB Destination Error Output]"
-          TopLeft="619,333">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="99,-50"
-              Start="0,0"
-              End="91.5,-50">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="45.5,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="45.5,0"
-                    Point2="49.5,0"
-                    Point3="49.5,-4" />
-                  <mssgle:LineSegment
-                    End="49.5,-46" />
-                  <mssgle:CubicBezierSegment
-                    Point1="49.5,-46"
-                    Point2="49.5,-50"
-                    Point3="53.5,-50" />
-                  <mssgle:LineSegment
-                    End="91.5,-50" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-23.70890625,1,146.4178125,11.43359375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Extract to Staging Table.Paths[Derived Column Output]"
-          TopLeft="459,263">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="108,-47"
-              Start="0,0"
-              End="100.5,-47">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="50,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="50,0"
-                    Point2="54,0"
-                    Point3="54,-4" />
-                  <mssgle:LineSegment
-                    End="54,-43" />
-                  <mssgle:CubicBezierSegment
-                    Point1="54,-43"
-                    Point2="54,-47"
-                    Point3="58,-47" />
-                  <mssgle:LineSegment
-                    End="100.5,-47" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Extract to Staging Table\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Extract to Staging Table\staging error rows">
     <Properties>
@@ -6494,24 +6512,15 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Extract to Staging Table\OLE DB Source">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
   <TaskHost
     design-time-name="Package\Staging to Prod">
     <LayoutInfo>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="160,42"
+          Id="Package\Staging to Prod\Prod Error Rows"
+          TopLeft="759,217" />
         <NodeLayout
           Size="169,42"
           Id="Package\Staging to Prod\Staging case table"
@@ -6520,6 +6529,34 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
           Size="161,42"
           Id="Package\Staging to Prod\Prod Case Table"
           TopLeft="340,229" />
+        <NodeLayout
+          Size="175,42"
+          Id="Package\Staging to Prod\Script Component"
+          TopLeft="547,220" />
+        <EdgeLayout
+          Id="Package\Staging to Prod.Paths[Output 0]"
+          TopLeft="722,239.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="37,0"
+              Start="0,0"
+              End="29.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="29.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Staging to Prod.Paths[OLE DB Source Output]"
           TopLeft="433.5,164">
@@ -6551,90 +6588,63 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="160,42"
-          Id="Package\Staging to Prod\Prod Error Rows"
-          TopLeft="713,262" />
-        <NodeLayout
-          Size="175,42"
-          Id="Package\Staging to Prod\Script Component"
-          TopLeft="381,322" />
         <EdgeLayout
           Id="Package\Staging to Prod.Paths[OLE DB Destination Error Output]"
-          TopLeft="420.5,271">
+          TopLeft="501,250">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="48,51"
+              EndConnector="46,-9"
               Start="0,0"
-              End="48,43.5">
+              End="38.5,-9">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,21.5" />
+                    End="19,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,21.5"
-                    Point2="0,25.5"
-                    Point3="4,25.5" />
+                    Point1="19,0"
+                    Point2="23,0"
+                    Point3="23,-4" />
                   <mssgle:LineSegment
-                    End="44,25.5" />
+                    End="23,-5" />
                   <mssgle:CubicBezierSegment
-                    Point1="44,25.5"
-                    Point2="48,25.5"
-                    Point3="48,29.5" />
+                    Point1="23,-5"
+                    Point2="23,-9"
+                    Point3="27,-9" />
                   <mssgle:LineSegment
-                    End="48,43.5" />
+                    End="38.5,-9" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-49.20890625,30.5,146.4178125,11.43359375"
+              BoundingBox="-50.20890625,1,146.4178125,11.43359375"
               RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Staging to Prod.Paths[Output 0]"
-          TopLeft="556,343">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="157,-60"
-              Start="0,0"
-              End="149.5,-60">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="74.5,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="74.5,0"
-                    Point2="78.5,0"
-                    Point3="78.5,-4" />
-                  <mssgle:LineSegment
-                    End="78.5,-56" />
-                  <mssgle:CubicBezierSegment
-                    Point1="78.5,-56"
-                    Point2="78.5,-60"
-                    Point3="82.5,-60" />
-                  <mssgle:LineSegment
-                    End="149.5,-60" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Staging to Prod\Prod Error Rows">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Staging to Prod\Staging case table">
     <Properties>
@@ -6650,19 +6660,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Staging to Prod\Prod Case Table">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Staging to Prod\Prod Error Rows">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
