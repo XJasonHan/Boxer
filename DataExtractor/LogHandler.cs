@@ -10,7 +10,9 @@ namespace DataExtractor
 {
     public sealed class LogHandler
     {
-        private CloudBlobContainer container = null;
+        private CloudBlobContainer container;
+ 
+
 
         private static readonly Lazy<LogHandler> lazy = new Lazy<LogHandler>(() => new LogHandler());
         public static LogHandler Instance { get { return lazy.Value; } }
@@ -25,18 +27,23 @@ namespace DataExtractor
             CloudStorageAccount account = CloudStorageAccount.Parse(storageConnectionString);
             CloudBlobClient serviceClient = account.CreateCloudBlobClient();
 
-            // Create container. Name must be lower case.
+            // Create container
             Console.WriteLine("Creating container...");
             this.container = serviceClient.GetContainerReference("dataextractorlog");
             this.container.CreateIfNotExistsAsync().Wait();
 
             DateTime now = DateTime.Now;
-            Console.WriteLine("current date is: {0:d}", now.Date);
+            Console.WriteLine("Current date is: {0:d}", now.Date);
 
             // write a blob to the container
-            CloudBlockBlob blob = container.GetBlockBlobReference("helloworld.txt");
-            blob.UploadTextAsync("Hello, World!").Wait();
+            //CloudBlockBlob blob = container.GetBlockBlobReference("helloworld.txt");
+            //blob.UploadTextAsync("Hello, World!").Wait();
             Console.Read();
+        }
+
+        public void writeLog(string message)
+        {
+            //if (this.logFile) { }
         }
     }
 
