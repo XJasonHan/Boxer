@@ -9,6 +9,7 @@ using Microsoft.WindowsAzure.Storage.Blob;
 
 namespace DataExtractor
 {
+    
     public sealed class LogHandler
     {
         private CloudBlobContainer container;
