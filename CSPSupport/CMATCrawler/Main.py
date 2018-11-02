@@ -67,4 +67,6 @@ class Program():
 
 if __name__ == '__main__':
     p=Program()
+    p.Main(True, 'CustomerCaseTable')
+    p.Main(False, 'TenantsPartnersMappingTable')
     p.Main(False, 'update')

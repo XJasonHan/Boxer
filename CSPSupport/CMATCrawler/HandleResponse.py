@@ -1,7 +1,6 @@
 import json
 import re
 from lxml import etree
-import threading;
 
 class HandleResponse:
     def __init__(self):
