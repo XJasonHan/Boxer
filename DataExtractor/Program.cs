@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.WindowsAzure.Storage;
 using Microsoft.WindowsAzure.Storage.Blob;
+using Microsoft.TeamFoundation.WorkItemTracking.WebApi.Models;
 
 
 namespace DataExtractor
@@ -21,22 +22,23 @@ namespace DataExtractor
 
         static void Main(string[] args)
         {
-            LogHandler log = LogHandler.Instance;
-            int i = 10000;
+            //LogHandler log = LogHandler.Instance;
+            //int i = 10000;
 
-            while (i > 0)
-            {
-                Random random = new Random();
+            //while (i > 0)
+            //{
+            //    Random random = new Random();
 
-                String message = RandomString(random.Next(5, 10));
+            //    String message = RandomString(random.Next(5, 10));
 
-                log.writeLog(message);
+            //    log.writeLog(message);
 
-                int randomTime = random.Next(10, 20);
-                System.Threading.Thread.Sleep(randomTime);
-                i = i--;
-            }
-
+            //    int randomTime = random.Next(10, 20);
+            //    System.Threading.Thread.Sleep(randomTime);
+            //    i = i--;
+            //}
+            EscortTFSController c = new EscortTFSController();
+            c.Extract();
         }
     }
 }
