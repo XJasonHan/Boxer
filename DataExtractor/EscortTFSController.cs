@@ -10,6 +10,8 @@ using Microsoft.VisualStudio.Services.WebApi;
 using Microsoft.TeamFoundation.WorkItemTracking.WebApi;
 using Microsoft.TeamFoundation.WorkItemTracking.WebApi.Models;
 
+using System.Reflection;
+
 namespace DataExtractor
 {
     class EscortTFSController
@@ -60,6 +62,7 @@ namespace DataExtractor
                     foreach (var workItem in workItems)
                     {
                         EscortItemModel item = new EscortItemModel(workItem);
+                        item.tfsObj = workItem;
                         results.Add(item.iD, item);
                     }
                 }
@@ -69,7 +72,7 @@ namespace DataExtractor
         }
         private string[] createFieldMapper()
         {
-
+            //get following fields from TFS
             string[] fields = new string[66];
             fields[0] = "Microsoft.VSTS.Common.ActivatedBy";
             fields[1] = "Microsoft.VSTS.Common.ActivatedDate";

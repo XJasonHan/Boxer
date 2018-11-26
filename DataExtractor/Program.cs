@@ -38,7 +38,8 @@ namespace DataExtractor
             //    i = i--;
             //}
             EscortTFSController c = new EscortTFSController();
-            c.Extract();
+            Dictionary<string, EscortItemModel> re = c.Extract();
+
         }
     }
 }
