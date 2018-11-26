@@ -22,24 +22,12 @@ namespace DataExtractor
 
         static void Main(string[] args)
         {
-            //LogHandler log = LogHandler.Instance;
-            //int i = 10000;
-
-            //while (i > 0)
-            //{
-            //    Random random = new Random();
-
-            //    String message = RandomString(random.Next(5, 10));
-
-            //    log.writeLog(message);
-
-            //    int randomTime = random.Next(10, 20);
-            //    System.Threading.Thread.Sleep(randomTime);
-            //    i = i--;
-            //}
             EscortTFSController c = new EscortTFSController();
             Dictionary<string, EscortItemModel> re = c.Extract();
-
+            foreach (string key in re.Keys)
+            {
+                bool temp = re[key].Equals(re[key]);
+            }
         }
     }
 }

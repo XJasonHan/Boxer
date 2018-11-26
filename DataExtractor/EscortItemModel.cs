@@ -333,9 +333,19 @@ namespace DataExtractor
             return tFSFieldKey;
         }
 
+        public bool Equals(EscortItemModel b)
+        {
 
-
-
-
+            foreach (KeyValuePair<string, object> field in this.tfsObj.Fields)
+            {
+                var objA = tfsObj.Fields[field.Key];
+                var objB = b.tfsObj.Fields[field.Key];
+                if (!objA.Equals(objB))
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
     }
 }

@@ -23,12 +23,16 @@ namespace DataExtractor
             vssBasic = new VssBasicCredential("", "5tgsajh4sbfdvhtjgyvy2i5zs4nw7xxa5h355lwenzyyrkddwdaq");
             uri = new Uri("https://vstfrdext.partners.extranet.microsoft.com:8443/Azure");
         }
-
         public Dictionary<string, EscortItemModel> Extract()
+        {
+            //default test: query tickets within 3days
+            return Extract(DateTime.Today.AddDays(-3));
+        }
+        public Dictionary<string, EscortItemModel> Extract(DateTime atime)
         {
             Wiql wiql = new Wiql()
             {
-                Query = string.Format(@"SELECT * FROM WorkItems WHERE [Team Project] = 'Mooncake' AND [Work Item Type] = 'Escort Request' AND [Created Date] ='2018-11-12'")
+                Query = string.Format(@"SELECT * FROM WorkItems WHERE [Team Project] = 'Mooncake' AND [Work Item Type] = 'Escort Request' AND [Created Date] >='{0}'", atime)
             };
             using (WorkItemTrackingHttpClient workItemTrackingHttpClient = new WorkItemTrackingHttpClient(this.uri, this.vssBasic))
             {
@@ -38,7 +42,6 @@ namespace DataExtractor
                 //create a dic to hold process result
                 Dictionary<String, EscortItemModel> results = new Dictionary<string, EscortItemModel>();
                 workItemQueryResult.AsOf = DateTime.Now;
-
 
                 if (workItemQueryResult.WorkItems.Count() != 0)             //get fileds if query result is not empty
                 {
