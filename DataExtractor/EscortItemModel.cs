@@ -78,9 +78,6 @@ namespace DataExtractor
         string clusterSet;
         string incidentEnvironment;
         public WorkItem tfsObj;
-        //Dictionary<String, dynamic> properties;
-
-        //public EscortItemModel(List<WorkItemField> workItemFields)
 
         public EscortItemModel()
         {
@@ -150,76 +147,6 @@ namespace DataExtractor
             tSGID = null;
             watermark = null;
             workItemType = null;
-
-            //create a dic holding all fields
-            /*
-            properties = new Dictionary<string, ref string>();
-            properties.Add("activatedBy", ref this.activatedBy);
-            properties.Add("activatedDate", this.activatedDate);
-            properties.Add("areaID", this.areaID);
-            properties.Add("areaPath", this.areaPath);
-            properties.Add("assignedTeam", this.assignedTeam);
-            properties.Add("assignedTo", this.assignedTo);
-            properties.Add("attachedFileCount", this.attachedFileCount);
-            properties.Add("authorizedAs", this.authorizedAs);
-            properties.Add("authorizedDate", this.authorizedDate);
-            properties.Add("boardColumn", this.boardColumn);
-            properties.Add("boardColumnDone", this.boardColumnDone);
-            properties.Add("boardLane", this.boardLane);
-            properties.Add("changedBy", this.changedBy);
-            properties.Add("changedDate", this.changedDate);
-            properties.Add("clientLibVersion", this.clientLibVersion);
-            properties.Add("closedBy", this.closedBy);
-            properties.Add("closedDate", this.closedDate);
-            properties.Add("clusterSet", this.clusterSet);
-            properties.Add("component", this.component);
-            properties.Add("componentImpacted", this.componentImpacted);
-            properties.Add("createdBy", this.createdBy);
-            properties.Add("createdDate", this.createdDate);
-            properties.Add("description", this.description);
-            properties.Add("effort", this.effort);
-            properties.Add("escortName", this.escortName);
-            properties.Add("escortRequestorName", this.escortRequestorName);
-            properties.Add("eventTime", this.eventTime);
-            properties.Add("externalLinkCount", this.externalLinkCount);
-            properties.Add("externalMilestone", this.externalMilestone);
-            properties.Add("history", this.history);
-            properties.Add("hyperlinkCount", this.hyperlinkCount);
-            properties.Add("icMID", this.icMID);
-            properties.Add("iD", this.iD);
-            properties.Add("incidentEnvironment", this.incidentEnvironment);
-            properties.Add("incidentSeverity", this.incidentSeverity);
-            properties.Add("iterationID", this.iterationID);
-            properties.Add("iterationPath", this.iterationPath);
-            properties.Add("keywordSearch", this.keywordSearch);
-            properties.Add("kPI_1_Description", this.kPI_1_Description);
-            properties.Add("kPI_2_Description", this.kPI_2_Description);
-            properties.Add("nodeName", this.nodeName);
-            properties.Add("ownerTeam", this.ownerTeam);
-            properties.Add("purpose", this.purpose);
-            properties.Add("rCAStatus", this.rCAStatus);
-            properties.Add("reason", this.reason);
-            properties.Add("relatedLinkCount", this.relatedLinkCount);
-            properties.Add("requestedReleaseDate", this.requestedReleaseDate);
-            properties.Add("resolvedBy", this.resolvedBy);
-            properties.Add("resolvedDate", this.resolvedDate);
-            properties.Add("resolvedReason", this.resolvedReason);
-            properties.Add("resolvedTime", this.resolvedTime);
-            properties.Add("rev", this.rev);
-            properties.Add("revisedDate", this.revisedDate);
-            properties.Add("source", this.source);
-            properties.Add("startTime", this.startTime);
-            properties.Add("state", this.state);
-            properties.Add("stateChangeDate", this.stateChangeDate);
-            properties.Add("tags", this.tags);
-            properties.Add("team", this.team);
-            properties.Add("teamProject", this.teamProject);
-            properties.Add("fFSID", this.fFSID);
-            properties.Add("fFSMigrationId", this.fFSMigrationId);
-            properties.Add("title", this.title);
-            properties.Add("tSGID", this.tSGID);
-            properties.Add("watermark", this.watermark);
-            properties.Add("workItemType", this.workItemType);*/
         }
 
         public EscortItemModel(WorkItem ticket) : this()
