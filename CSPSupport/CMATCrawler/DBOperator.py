@@ -16,8 +16,8 @@ class DBOperator:
             tenantids=session.query(t_CustomerCaseTable.columns['TenantID']).filter(t_CustomerCaseTable.columns['PartnerName'] == None).distinct().all()
         else:
             tenantids=session.query(t_CustomerCaseTable.columns['TenantID'])\
-                .outerjoin(t_TenantsPartnersMappingTable, t_TenantsPartnersMappingTable.columns['tenantid'] == t_CustomerCaseTable.columns['TenantID'])\
-                .filter(t_TenantsPartnersMappingTable.columns['tenantid'] == None)\
+                .outerjoin(TenantsPartnersMappingTable, TenantsPartnersMappingTable.tenantid == t_CustomerCaseTable.columns['TenantID'])\
+                .filter(TenantsPartnersMappingTable.tenantid == None)\
                 .distinct().all()
         tenantids=[str(result.TenantID).strip() for result in tenantids]
         session.close()
@@ -35,12 +35,19 @@ class DBOperator:
         session.close()
 
     def fill_partner_in_tpmt(self, dict):
+        smaker=sessionmaker(bind=engine)
+        session=smaker()
         tp_list=[]
         for k in dict.keys():
             for pname in dict[k]:
-                tp_list.append({'tenantid': k, 'parntner': pname})
+                tprow=TenantsPartnersMappingTable()
+                tprow.tenantid=k
+                tprow.parntner=pname
+                tp_list.append(tprow)
 
-        engine.execute(t_TenantsPartnersMappingTable.insert(), tp_list)
+        session.add_all(tp_list)
+        session.commit()
+        session.close()
 
     def update_case_type(self):
         smaker=sessionmaker(bind=engine)
