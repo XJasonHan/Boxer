@@ -22,12 +22,22 @@ namespace DataExtractor
 
         static void Main(string[] args)
         {
+            /*
             EscortTFSController c = new EscortTFSController();
             Dictionary<string, EscortItemModel> re = c.Extract();
             foreach (string key in re.Keys)
             {
                 bool temp = re[key].Equals(re[key]);
-            }
+            }*/
+            var context = new AzureSREOperationEntities();
+            var item = new EscortTFSTicketTable_Prod()
+            {
+                ID = 1111111,
+                Escort_Name = "test item"
+
+            };
+            context.EscortTFSTicketTable_Prod.Add(item);
+            context.SaveChanges();
         }
     }
 }
