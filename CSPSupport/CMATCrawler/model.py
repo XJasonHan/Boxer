@@ -1,5 +1,6 @@
 # coding: utf-8
-from sqlalchemy import CHAR, Column, DateTime, Integer, NCHAR, String, Table, Unicode
+from sqlalchemy import CHAR, Column, DateTime, ForeignKey, Integer, NCHAR, String, Table, Unicode, text
+from sqlalchemy.orm import relationship
 from sqlalchemy.ext.declarative import declarative_base
 
 Base = declarative_base()
@@ -16,7 +17,7 @@ t_CustomerCaseTable = Table(
     Column('Product', Unicode(50)),
     Column('IssueCode', Unicode(300)),
     Column('InquireType', Unicode(50)),
-    Column('Description', Unicode(800)),
+    Column('Description', Unicode),
     Column('EngageMethod', Unicode(50)),
     Column('SLA', Unicode(50)),
     Column('SLATime', DateTime),
@@ -95,6 +96,14 @@ t_Dim_CustomerTenant = Table(
 )
 
 
+t_PartnerDomain = Table(
+    'PartnerDomain', metadata,
+    Column('ChineseName', Unicode(255)),
+    Column('DomainName', Unicode(255)),
+    Column('#EnglishName', Integer)
+)
+
+
 class PartnerTable(Base):
     __tablename__ = 'PartnerTable'
 
@@ -121,11 +130,11 @@ t_StagingCustomerCase = Table(
     Column('Product', Unicode(50)),
     Column('IssueCode', Unicode(300)),
     Column('InquireType', Unicode(50)),
-    Column('Description', Unicode(800)),
-    Column('EngageMethod', Unicode(50)),
+    Column('Description', Unicode),
+    Column('EngageMethod', Unicode(255)),
     Column('SLA', Unicode(50)),
     Column('SLATime', DateTime),
-    Column('Status', Unicode(50)),
+    Column('Status', Unicode(255)),
     Column('CloseReason', Unicode(300)),
     Column('Creator', Unicode(50)),
     Column('ContactPerson', Unicode(300)),
@@ -194,22 +203,26 @@ t_StagingCustomerCaseErrorRows = Table(
 )
 
 
-t_TenantsPartnersMappingTable = Table(
-    'TenantsPartnersMappingTable', metadata,
-    Column('tenantid', Unicode(40)),
-    Column('parntner', Unicode(50))
-)
+class TenantsPartnersMappingTable(Base):
+    __tablename__ = 'TenantsPartnersMappingTable'
+
+    tenantid = Column(Unicode(40))
+    parntner = Column(Unicode(50))
+    id = Column(Integer, primary_key=True)
 
 
-t_TestTable = Table(
-    'TestTable', metadata,
-    Column('TenantID', Unicode(40)),
-    Column('PartnerName', Unicode(70))
-)
+class Offerdetailtable(Base):
+    __tablename__ = 'offerdetailtable'
 
+    id = Column(Integer, primary_key=True)
+    tpinfo = Column(ForeignKey('TenantsPartnersMappingTable.id'), nullable=False)
+    offer_name = Column(Unicode(60))
+    purchase_date = Column(DateTime)
+    start_date = Column(DateTime)
+    end_date = Column(DateTime)
+    seat_count = Column(Integer)
+    billed_cycle = Column(Unicode(40))
+    status = Column(Unicode(40))
+    insert_datetime = Column(DateTime, server_default=text("(getdate())"))
 
-t_TestTable_1 = Table(
-    'TestTable_1', metadata,
-    Column('TenantID', Unicode(40)),
-    Column('cnt', Integer)
-)
+    TenantsPartnersMappingTable = relationship('TenantsPartnersMappingTable')

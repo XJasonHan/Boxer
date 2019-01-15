@@ -2,7 +2,7 @@
 <BuildLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ProjectInfo>
     <Name>PartnerData</Name>
-    <LastWriteTime>2018-10-17T02:16:07.7957239Z</LastWriteTime>
+    <LastWriteTime>2019-01-03T01:32:31.5681203Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
@@ -18,7 +18,7 @@
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>AzulCaseExtract.dtsx</Name>
-      <LastWriteTime>2018-10-19T06:47:04.4350711Z</LastWriteTime>
+      <LastWriteTime>2019-01-03T01:32:18.9409974Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>
