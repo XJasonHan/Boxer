@@ -1,5 +1,6 @@
 # coding: utf-8
 from sqlalchemy import CHAR, Column, DateTime, ForeignKey, Integer, NCHAR, String, Table, Unicode, text
+from sqlalchemy.dialects.mssql.base import BIT
 from sqlalchemy.orm import relationship
 from sqlalchemy.ext.declarative import declarative_base
 
@@ -209,6 +210,7 @@ class TenantsPartnersMappingTable(Base):
     tenantid = Column(Unicode(40))
     parntner = Column(Unicode(50))
     id = Column(Integer, primary_key=True)
+    crawl_status = Column(BIT, nullable=False, server_default=text("((0))"))
 
 
 class Offerdetailtable(Base):

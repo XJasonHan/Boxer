@@ -1,24 +1,38 @@
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
+from sqlalchemy.sql import *
 from model import *
 import re
 import pyodbc
 
-COON_STR='mssql+pyodbc://pbiadmin:!QAZ2wsx1234@pbireporting.database.chinacloudapi.cn/PartnerCaseReport?driver=SQL+Server+Native+Client+11.0'
+#COON_STR='mssql+pyodbc://pbiadmin:!QAZ2wsx1234@pbireporting.database.chinacloudapi.cn/PartnerCaseReport?driver=SQL+Server+Native+Client+11.0'
+#COON_STR='mssql+pyodbc://cspowner:!QAZ1qaz@localhost/CSPCopy?driver=SQL+Server+Native+Client+11.0'
+COON_STR='mssql+pyodbc://pbiadmin:!QAZ2wsx1234@bibc.database.chinacloudapi.cn/CorpBI?driver=SQL+Server+Native+Client+11.0'
 engine=create_engine(COON_STR, max_overflow=5, echo=True)
 
 
 class DBOperator:
-    def get_tenantIds(self, pname_exists=True):
+    def get_all_tenants(self):
         smaker=sessionmaker(bind=engine)
         session=smaker()
-        if pname_exists:
-            tenantids=session.query(t_CustomerCaseTable.columns['TenantID']).filter(t_CustomerCaseTable.columns['PartnerName'] == None).distinct().all()
-        else:
-            tenantids=session.query(t_CustomerCaseTable.columns['TenantID'])\
-                .outerjoin(TenantsPartnersMappingTable, TenantsPartnersMappingTable.tenantid == t_CustomerCaseTable.columns['TenantID'])\
-                .filter(TenantsPartnersMappingTable.tenantid == None)\
-                .distinct().all()
+        allinfo=session.query(TenantsPartnersMappingTable.tenantid)\
+            .filter(TenantsPartnersMappingTable.parntner != None, TenantsPartnersMappingTable.parntner!='', TenantsPartnersMappingTable.crawl_status==0).distinct().all()
+        session.close()
+        return allinfo
+
+    def get_tpinfo(self,tenantid, partnername):
+        smaker=sessionmaker(bind=engine)
+        session=smaker()
+        tpinfo=session.query(TenantsPartnersMappingTable.id).filter(TenantsPartnersMappingTable.tenantid==tenantid,
+                                                                 TenantsPartnersMappingTable.parntner==partnername,
+                                                                    TenantsPartnersMappingTable.crawl_status==0).first()
+        session.close()
+        return tpinfo
+
+    def get_tenantIds_not_in_cct(self):
+        smaker=sessionmaker(bind=engine)
+        session=smaker()
+        tenantids=session.query(t_CustomerCaseTable.columns['TenantID']).filter(t_CustomerCaseTable.columns['PartnerName'] == None).distinct().all()
         tenantids=[str(result.TenantID).strip() for result in tenantids]
         session.close()
         return tenantids
@@ -39,13 +53,30 @@ class DBOperator:
         session=smaker()
         tp_list=[]
         for k in dict.keys():
-            for pname in dict[k]:
-                tprow=TenantsPartnersMappingTable()
-                tprow.tenantid=k
-                tprow.parntner=pname
-                tp_list.append(tprow)
-
+            if dict[k] is None:
+                continue
+            else:
+                for pname in dict[k]:
+                    tpm=TenantsPartnersMappingTable()
+                    tpm.tenantid=k
+                    tpm.parntner=pname
+                    tp_list.append(tpm)
         session.add_all(tp_list)
+        session.commit()
+        session.close()
+
+    def fill_offerdetail(self,offers):
+        smaker=sessionmaker(bind=engine)
+        session=smaker()
+        offer_list=[]
+        for k in offers.keys():
+            offer_list.extend(offers[k])
+        session.add_all(offer_list)
+
+        dis_tpinfo = list(set([offer.tpinfo for offer in offer_list]))
+        for tpinfo in dis_tpinfo:
+            session.query(TenantsPartnersMappingTable.crawl_status).filter(TenantsPartnersMappingTable.id==tpinfo).\
+            update({TenantsPartnersMappingTable.crawl_status:1},synchronize_session=False)
         session.commit()
         session.close()
 
@@ -59,7 +90,7 @@ class DBOperator:
         for dn in query_pdomain:
             arr_dnames.append(dn[0])
 
-        for row in query_customer.filter(t_CustomerCaseTable.columns['CaseType'] == None).all():
+        for row in query_customer.filter(t_CustomerCaseTable.columns['CaseType'] == None,t_CustomerCaseTable.columns['PartnerName']!=None).all():
             if row[1] != None:
                 have_set = False
                 for dname in arr_dnames:
@@ -82,4 +113,26 @@ class DBOperator:
                     synchronize_session=False)
 
         session.commit()
+        session.close()
+
+    def Update_cct(self):
+        smaker=sessionmaker(bind=engine)
+        session=smaker()
+        conn=engine.connect()
+
+        #Update ParnterName in CustomerCaseTable with exist PartnerName in TenantsPartnersMappingTable
+        update_cct=t_CustomerCaseTable.update().values(
+            PartnerName=select([TenantsPartnersMappingTable.parntner])\
+            .where(TenantsPartnersMappingTable.tenantid==t_CustomerCaseTable.columns['TenantID']).limit(1)
+        ).where(t_CustomerCaseTable.columns['PartnerName']==None)
+        conn.execute(update_cct)
+
+        #update crawl status for offer detail
+        crawl_status=session.query(TenantsPartnersMappingTable.crawl_status).\
+            filter(TenantsPartnersMappingTable.parntner != None, TenantsPartnersMappingTable.parntner!='').\
+            distinct().all()
+        if len(crawl_status)==1:
+            session.query(TenantsPartnersMappingTable).update({TenantsPartnersMappingTable.crawl_status:0},synchronize_session=False)
+
+#
         session.close()

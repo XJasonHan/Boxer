@@ -1,72 +1,136 @@
-from RequestMaker import *
-from HandleResponse import *
 from DBOperator import *
-from concurrent.futures import as_completed, ThreadPoolExecutor
-import queue
+from concurrent.futures import as_completed, ThreadPoolExecutor, ProcessPoolExecutor
+from Pages import *
 import threading
+import time
+import copy
+lock=threading.Lock()
 
+class implementation:
+    # def __init__(self):
+    def create_accpage(self,cspage,tenant):
+        if type(tenant) == str:
+            acc_req_url=cspage.get_account_url(tenant)
+        else:
+            acc_req_url=cspage.get_account_url(tenant.tenantid)
+        if acc_req_url != None:
+            accountPage=AccountPage(acc_req_url)
+        else:
+            accountPage = None
+        return accountPage
 
-class Program():
+    def iterate_offer(self,accountpage,partners,tenant):
+        dbop=DBOperator()
+        offers=[]
+        for partner in partners:
+            # partnerid=partner.split(' ')[1]
+            # partnername=partner.split(' ')[0]
+            tpinfo=dbop.get_tpinfo(tenant.tenantid,  partner.split(' ')[0])
+            if tpinfo is None:
+                print('\033[0;37;41mCannot search in DB with tenant id: %s and partner: %s\033[0m' % (tenant.tenantid, partner.split(' ')[0]))
+                continue
+            offer=accountpage.get_offers_by_partner(partner.split(' ')[1], tpinfo.id)
+            offers.extend(offer)
+
+        return offers
+
+    def impl_get_partners(self,cspage, tenant):
+        try:
+            accountpage= self.create_accpage(cspage,tenant)
+            partnernamecoll=[]
+            if accountpage != None:
+                partners = accountpage.get_partners()
+                if partners:
+                    print('%s:%s' % (tenant, partners))
+                    if not all:
+                        partnernamecoll.append(partners[0][0:-37])
+                    else:
+                        for pname in partners:
+                            partnernamecoll.append(pname[0:-37])
+                else:
+                    partnernamecoll.append('不是CSP客户')
+                    print('%s:%s' % (tenant, '不是CSP客户'))
+            else:
+                partnernamecoll=[]
+                partnernamecoll.append('TenantID 不存在')
+                print('%s:%s' % (tenant, '不是CSP客户'))
+        except IndexError:
+            partnernamecoll=[]
+            partnernamecoll.append('不是CSP客户')
+            print('%s:%s' % (tenant, '不是CSP客户'))
+        else:
+            return partnernamecoll
+
+    def impl_get_offers(self,cspage,tenant):
+        accountpage=self.create_accpage(cspage,tenant)
+        partners=accountpage.get_partners()
+        offers=self.iterate_offer(accountpage,partners,tenant)
+
+        return offers
+
+class program:
     def __init__(self):
         self.tg=DBOperator()
-        self.lock=threading.Lock()
+        self.customersearchpage=CustomerSearchPage()
+        # self.lock=threading.Lock()
 
-    def get_pnames(self, tenantId, all=False):
-        rem=RequestMaker()
-        resh=HandleResponse()
-        partnernames=resh.get_partnername(rem.sub_request(tenantId))
-        partnernamecoll=[]
-        if partnernames:
-            print('%s:%s' % (tenantId, partnernames))
-            if not all:
-                partnernamecoll.append(partnernames[0][0:-37])
-            else:
-                for pname in partnernames:
-                    partnernamecoll.append(pname[0:-37])
+    def get_partners(self,tenant):
+        try:
+            impl = implementation()
+            partners = impl.impl_get_partners(copy.deepcopy(self.customersearchpage),tenant)
+            return partners
+        except:
+            print('Tenant id is: '+ tenant)
 
-        else:
-            partnernamecoll.append('不是CSP客户')
-            print('%s:%s' % (tenantId, '不是CSP客户'))
+    def get_offers(self, tenant):
+        try:
+            impl=implementation()
+            #lock.acquire()
+            offers=impl.impl_get_offers(copy.deepcopy(self.customersearchpage),tenant)
+            #lock.release()
 
-        return partnernamecoll
+            return offers
+        except TypeError:
+            print('Tenant id is: '+ tenant.tenantid)
+            raise
 
-    def Main(self, pname_exists, tablename):
-        tenantIds=self.tg.get_tenantIds(pname_exists)
+    def divide_to_perform(self, arr, get_func,fill_in):
+        group=int(len(arr) / 100)
+        mod=len(arr) % 100
+        for i in range(1, group + 1):
+            dict=self.parall_exec(arr[(i - 1) * 100:i * 100-1], get_func)
+            fill_in(dict)
 
-        if tablename == 'CustomerCaseTable':
-            group=int(len(tenantIds) / 100)
-            mod=len(tenantIds) % 100
-            for i in range(1, group + 1):
-                dict=self.parall_exec(tenantIds[(i - 1) * 100:i * 100], False)
-                self.tg.fill_partner_in_cct(dict)
+        dict=self.parall_exec(arr[-mod:], get_func)
+        fill_in(dict)
 
-            dict=self.parall_exec(tenantIds[-mod:], False)
-            self.tg.fill_partner_in_cct(dict)
+    def seq_to_perform(self, tenants, func):
+        for tenant in tenants:
+            func(tenant)
 
-        if tablename == 'TenantsPartnersMappingTable':
-            group=int(len(tenantIds) / 100)
-            mod=len(tenantIds) % 100
-            for i in range(1, group + 1):
-                dict=self.parall_exec(tenantIds[(i - 1) * 100:i * 100], True)
-                self.tg.fill_partner_in_tpmt(dict)
-
-            dict=self.parall_exec(tenantIds[-mod:], True)
-            self.tg.fill_partner_in_tpmt(dict)
-
-        if tablename == 'update':
-            self.tg.update_case_type()
-
-    def parall_exec(self, tenantIds, getall):
+    def parall_exec(self,tenants, func):
         dict={}
-        with ThreadPoolExecutor(max_workers=10) as executor:
-            futs={executor.submit(self.get_pnames, i, getall): i for i in tenantIds}
+        with ThreadPoolExecutor(max_workers=8) as executor:
+            futs={executor.submit(func, i): i for i in tenants}
         for fut in as_completed(futs):
             dict[futs[fut]]=fut.result()
         return dict
 
+    def main(self):
+        p=time.time()
+        self.tg.Update_cct()
+        partial_tenants=self.tg.get_tenantIds_not_in_cct()
+        #all_tenants=self.tg.get_all_tenants()[0:50]
+
+        self.divide_to_perform(partial_tenants,self.get_partners,self.tg.fill_partner_in_tpmt)
+        self.tg.Update_cct()
+        #self.divide_to_perform(all_tenants, self.get_offers, self.tg.fill_offerdetail)
+        #self.seq_to_perform(all_tenants,self.get_offers)
+
+        self.tg.update_case_type()
+        n=time.time()
+        print("Elapsed : %s" %(n-p))
 
 if __name__ == '__main__':
-    p=Program()
-    p.Main(True, 'CustomerCaseTable')
-    p.Main(False, 'TenantsPartnersMappingTable')
-    p.Main(False, 'update')
+    p=program()
+    p.main()
