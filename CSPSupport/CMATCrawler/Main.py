@@ -9,14 +9,17 @@ lock=threading.Lock()
 class implementation:
     # def __init__(self):
     def create_accpage(self,cspage,tenant):
+        accountPage = None
         if type(tenant) == str:
-            acc_req_url=cspage.get_account_url(tenant)
+            tid = tenant
         else:
-            acc_req_url=cspage.get_account_url(tenant.tenantid)
+            tid = tenant.tenantid
+
+        acc_req_url=cspage.get_account_url(tid)
+
         if acc_req_url != None:
             accountPage=AccountPage(acc_req_url)
-        else:
-            accountPage = None
+
         return accountPage
 
     def iterate_offer(self,accountpage,partners,tenant):

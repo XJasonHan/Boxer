@@ -32,27 +32,46 @@ class CustomerSearchPage(AbstractPage):
 
         res=requests.post(search_req_url, data=self.cons.search_pay_load, headers=self.cons.search_header)
 
-        acc_url=None
         if res.text.find('doesn') > 0 or res.text.find('TenantId is empty') > 0:
             #print('TenantId %s does not exist' % tenantid)
             acc_url = None
         else:
-            acc_url=self.__get_accurl(res)
+            self.res_rows=json.loads(res.text)['Rows'][0]
+            acc_url=self.__get_accurl
 
         return acc_url
 
-    def __get_accurl(self, response):
+    @property
+    def __get_accurl(self):
         try:
-            rows=self.res_rows=json.loads(response.text)['Rows'][0]
-            url='accountId=' + (rows['AccountId'] if (rows['AccountId'] != None) else '') + '&'
-            url=url + 'externalaccountid=' + rows['ExternalAccountId'] + '&'
-            url=url + 'currentAccountId=' + (rows['AccountId'] if (rows['AccountId'] != None) else '') + '&'
-            url=url + 'identityType=OCPTenantID&identityValue=' + rows['ExternalAccountId'] + '&'
+            url='accountId=' + (self.res_rows['AccountId'] if (self.res_rows['AccountId'] != None) else '') + '&'
+            url=url + 'externalaccountid=' + self.res_rows['ExternalAccountId'] + '&'
+            url=url + 'currentAccountId=' + (self.res_rows['AccountId'] if (self.res_rows['AccountId'] != None) else '') + '&'
+            url=url + 'identityType=OCPTenantID&identityValue=' + self.res_rows['ExternalAccountId'] + '&'
             url=url + 'identityEmail=N%2FA'
         except:
-            print(response.text)
+            print(self.res_rows)
         else:
             return url
+
+    @property
+    def AccountId(self):
+        return self.res_rows['AccountId']
+
+    @property
+    def ExternalAccountId(self):
+        return self.res_rows['ExternalAccountId']
+
+
+class CustomerOVPage(AbstractPage):
+    def __init__(self, url=account_overview_url, token=None, accountid = None, tenantid = None):
+        AbstractPage.__init__(self, url)
+
+    def __get_overview_url(self, tenantid, accountid, token):
+        url = account_overview_url + tenantid + "&currentAccountId="
+        url = url + accountid + '&currentExternalAccountId='
+        url = url + tenantid + '&__RequestVerificationToken=' + token
+        return url
 
 class AccountPage(AbstractPage):
     def __init__(self, req_url, url=account_base_url):
