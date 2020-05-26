@@ -5,9 +5,9 @@ from model import *
 import re
 import pyodbc
 
-#COON_STR='mssql+pyodbc://pbiadmin:!QAZ2wsx1234@pbireporting.database.chinacloudapi.cn/PartnerCaseReport?driver=SQL+Server+Native+Client+11.0'
-#COON_STR='mssql+pyodbc://cspowner:!QAZ1qaz@localhost/CSPCopy?driver=SQL+Server+Native+Client+11.0'
-COON_STR='mssql+pyodbc://pbiadmin:!QAZ2wsx1234@bibc.database.chinacloudapi.cn/CorpBI?driver=SQL+Server+Native+Client+11.0'
+#COON_STR='mssql+pyodbc://********:!******@********.database.chinacloudapi.cn/PartnerCaseReport?driver=SQL+Server+Native+Client+11.0'
+#COON_STR='mssql+pyodbc://*******:*******@localhost/CSPCopy?driver=SQL+Server+Native+Client+11.0'
+COON_STR='mssql+pyodbc://*******:*******@********.database.chinacloudapi.cn/CorpBI?driver=SQL+Server+Native+Client+11.0'
 engine=create_engine(COON_STR, max_overflow=5, echo=True)
 
 
